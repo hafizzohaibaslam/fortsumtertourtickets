@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /checkout
+Disallow: /my-orders
+
+Sitemap: https://www.alcatrazislandticketing.com/sitemap.xml
