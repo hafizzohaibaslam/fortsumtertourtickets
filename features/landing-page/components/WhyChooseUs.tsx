@@ -67,39 +67,43 @@ const WhyChooseUsCard = ({
 const whyChooseUsData = [
   {
     id: "1",
-    title: "Night Tour Access",
-    description: "Guaranteed Alcatraz Night tour tickets (no hidden fees)",
+    title: "Historic Access",
+    description:
+      " Guaranteed Fort Sumter tour tickets with ferry ride included (no hidden fees)",
     image: "/element.png",
   },
   {
     id: "2",
     title: "Instant Booking",
-    description: "Easy online booking with quick confirmation",
+    description: " Quick and easy online booking with immediate confirmation",
     image: "/element-2.png",
   },
   {
     id: "3",
-    title: "Scenic Ferry Ride",
+    title: "Scenic Harbor Cruise",
     description:
-      "Comfortable ferries with panoramic Bay views in the Moonlight",
+      "Relaxing ferry ride across Charleston Harbor with stunning skyline and water views",
     image: "/element-3.png",
   },
   {
     id: "4",
-    title: "Expert Commentary",
-    description: "Expert guides for a richer Alcatraz Island tour ",
+    title: "Expert Rangers",
+    description:
+      "Learn from National Park Service rangers who share powerful stories of the Civil War",
     image: "/element-4.png",
   },
   {
     id: "5",
-    title: "Flexible Schedule",
-    description: "Flexible departure times from Pier 33",
+    title: "Flexible Departures",
+    description:
+      " Multiple daily departures from Liberty Square and Patriots Point",
     image: "/element-5.png",
   },
   {
     id: "6",
     title: "Trusted Experience",
-    description: "Fan-favourite tours trusted by thousands of travellers",
+    description:
+      "Top-rated tours enjoyed by thousands of history lovers every year",
     image: "/element-6.png",
   },
 ];

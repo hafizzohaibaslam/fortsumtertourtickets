@@ -1,8 +1,8 @@
 export const ROUTES = {
   HOME: "/",
-  ALCATRAZ_DAY_TOUR: "/alcatraz-day-tour",
-  ALCATRAZ_NIGHT_TOUR: "/alcatraz-night-tour",
-  ALCATRAZ_ISLAND_HISTORY: "/blog",
+  PATRIOTS_POINT: "/patriots-point",
+  LIBERTY_SQUARE: "/liberty-square",
+  FORT_SUMTER_HISTORY: "/blog",
   FAQs: "/#faqs",
   CONTACT_US: "/contact-us",
   CHECKOUT: "/checkout",

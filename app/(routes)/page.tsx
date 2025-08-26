@@ -95,8 +95,8 @@ const Home = () => {
       <CanonicalTag pathName="/" />
       <HeroSection />
       <ServicesSection />
-      <PreparationTips />
-      <WhatCustomersSay />
+      {/* <PreparationTips /> */}
+      {/* <WhatCustomersSay /> */}
       <AskedQuestions data={landingPageAccordianData} />
       <FortSummerExperience />
 

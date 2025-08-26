@@ -54,8 +54,11 @@ const ServicesSectionCard = ({ data }: { data: ServicesSectionCardData }) => {
           ))}
         </div>
         <div className="space-y-[15px] mt-[15px] mb-[35px]">
-          <h2 className="font-nohemi font-normal text-[24px] lg:text-[32px] leading-[28px] lg:leading-[42px] text-[var(--blue-2)]">
-            {data.title}
+          <h2 className="font-nohemi font-normal text-[24px] lg:text-[30px] leading-[28px] lg:leading-[42px] text-[var(--blue-2)]">
+            {data.title}{" "}
+            <span className="font-plus-jakarta-sans font-medium text-[14px] leading-[24px] text-[#252B2E]">
+              {data.subtitle}
+            </span>
           </h2>
           <p className="font-plus-jakarta-sans font-medium md:text-[16px] text-[14px] leading-[24px] text-[#252B2E]">
             {data.description}
@@ -70,8 +73,8 @@ const ServicesSectionCard = ({ data }: { data: ServicesSectionCardData }) => {
         onClick={() => handleBookingModalOpenClose(true, data.tourType)}
       >
         {data.tourType === "Day Tour"
-          ? "Get Alcatraz Day Tickets"
-          : "Get Alcatraz Night Tickets"}
+          ? "Get Fort Sumter Tickets"
+          : "Get Fort Sumter Tickets"}
       </Button>
     </div>
   );

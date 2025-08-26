@@ -8,15 +8,15 @@ import { ServicesSectionCardData } from "../components/ServicesSectionCard";
 export const cardsData = [
   {
     id: "1",
-    title: "Alcatraz day tour",
-    image: "/landing-page/day-tour.webp",
-    link: "/alcatraz-day-tour",
+    title: "Patriots Point",
+    image: "/landing-page/patriots.webp",
+    link: "/patriots-point",
   },
   {
     id: "2",
-    title: "Alcatraz night tour",
-    image: "/landing-page/night-tour.webp",
-    link: "/alcatraz-night-tour",
+    title: "Liberty Square",
+    image: "/landing-page/liberty.webp",
+    link: "/liberty-square",
   },
 ];
 
@@ -24,11 +24,11 @@ export const servicesSectionData: ServicesSectionCardData[] = [
   {
     id: "1",
     number: "01",
-    title: "Explore Alcatraz Day Tour",
-    image: "/landing-page/card11.webp",
+    title: "Patriots Point",
+    subtitle: "Mount Pleasant",
+    image: "/landing-page/patriots.webp",
     tourType: "Day Tour",
-    description:
-      "If you want to explore Alcatraz without any time limit, the Day tour is for you. A day tour provides you with a majestic view of both the outdoors and indoors. Explore the historic cell house, the island's secrets, at your own pace. ",
+    description: "",
     tags: [
       {
         Icon: Hourglass,
@@ -38,21 +38,26 @@ export const servicesSectionData: ServicesSectionCardData[] = [
         Icon: AlarmClock,
         label: TOUR_DETAILS.dayTour.departureTime,
       },
+      //location
+      {
+        Icon: MapPin,
+        label: "40 Patriots Point Rd, Mt. Pleasant, SC 29464",
+      },
     ],
     detailsList: [
       {
         Icon: Check,
-        label: "Guided stories on escape attempts, island facts",
+        label: "30-min narrated Fort Sumter ferry across Charleston Harbor",
         iconClassName: "",
       },
       {
         Icon: Check,
-        label: "Audio Tour inside the prison (in 10+ languages)",
+        label: "Ranger talks + Q&A at the fort",
         iconClassName: "",
       },
       {
         Icon: Check,
-        label: "Free time in gardens, lighthouse, and museum",
+        label: "~1 hr exploring fort, museum, visitor centre exhibits",
         iconClassName: "",
       },
 
@@ -68,22 +73,18 @@ export const servicesSectionData: ServicesSectionCardData[] = [
       // },
       {
         Icon: Check,
-        label: "San Francisco & Golden Gate views",
+        label: "Access to America’s National Parks Store on site",
         iconClassName: "bg-[#25283E]",
       },
       {
         Icon: Check,
-        label: "Larger groups, more visitors",
+        label: "Waterfront & USS Yorktown views at ferry return",
         iconClassName: "",
       },
       {
         Icon: Check,
-        label: "The Big Lockup & New Industries Building",
-        iconClassName: "",
-      },
-      {
-        Icon: Check,
-        label: "Families, first-time visitors, sightseeing lovers",
+        label:
+          "Visitors staying in Mt. Pleasant or combining with USS Yorktown & Naval Museum",
         iconClassName: "",
       },
     ],
@@ -91,11 +92,11 @@ export const servicesSectionData: ServicesSectionCardData[] = [
   {
     id: "2",
     number: "02",
-    title: "Journey to Alcatraz Night Tour",
-    image: "/landing-page/alcatraz-22.webp",
+    title: "Liberty Square",
+    subtitle: "Downtown Charleston",
+    image: "/landing-page/liberty.webp",
     tourType: "Night Tour",
-    description:
-      "Indulged in the most mesmerizing views on the night tour of Alcatraz Island, when the sun set, Alcatraz turned itself from a historical monument to a shadowy, gloomy building. With the dim lights of dark prison cells, shadows turn long.",
+    description: "",
     tags: [
       {
         Icon: Hourglass,
@@ -105,49 +106,43 @@ export const servicesSectionData: ServicesSectionCardData[] = [
         Icon: AlarmClock,
         label: TOUR_DETAILS.nightTour.departureTime,
       },
+      {
+        Icon: MapPin,
+        label: "340 Concord St, Charleston, SC 29401",
+      },
     ],
 
     detailsList: [
       {
         Icon: Check,
-        label: "Night narration about Alcatraz history",
+        label: "30-min Fort Sumter boat tour from downtown",
         iconClassName: "bg-[#25283E]",
       },
       {
         Icon: Check,
-        label: "Same audio tour + access to hidden cell blocks",
+        label: "Ranger talks + live historic commentary during cruise",
         iconClassName: "",
       },
 
       {
         Icon: Check,
+        label: "~1 hr exploring fort, museum exhibits, ranger talks",
+        iconClassName: "",
+      },
+      {
+        Icon: Check,
+        label: "Access to the gift shop & historic displays at the fort",
+        iconClassName: "",
+      },
+      {
+        Icon: Check,
+        label: "Charleston skyline & harbor views on return",
+        iconClassName: "",
+      },
+      {
+        Icon: Check,
         label:
-          "Visit secret spots like hospital, Civil War buildings, lighthouse ruins",
-        iconClassName: "",
-      },
-      {
-        Icon: Check,
-        label: "Night-only access to restricted areas",
-        iconClassName: "",
-      },
-      {
-        Icon: Check,
-        label: "Talks about guards, prisoners, and escape stories",
-        iconClassName: "",
-      },
-      {
-        Icon: Check,
-        label: "Stunning skyline & bridge views at sunset/night",
-        iconClassName: "",
-      },
-      {
-        Icon: Check,
-        label: "Same exhibits included",
-        iconClassName: "",
-      },
-      {
-        Icon: Check,
-        label: "History lovers, photographers, night explorers",
+          "Visitors staying downtown Charleston, near the Aquarium & Historic District",
         iconClassName: "",
       },
     ],

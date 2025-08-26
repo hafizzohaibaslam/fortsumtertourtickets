@@ -16,8 +16,8 @@ const HeroSection = () => {
       {/* ✅ Optimized LCP Background Image */}
       <Image
         className="absolute inset-0 w-full h-full object-cover -z-10"
-        src="/landing-page/alcatraz1.webp"
-        alt="Panoramic Alcatraz Island Full View"
+        src="/fort-sumter-hero.jpg"
+        alt="Panoramic Fort Sumter Full View"
         priority
         fetchPriority="high"
         fill
@@ -28,11 +28,11 @@ const HeroSection = () => {
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-[104px] py-[16px] z-20 relative">
           <span className="font-plus-jakarta-sans font-normal text-[16px] leading-[16px] px-[10px] py-[4px] border-[1px] border-[#FFFFFF99] w-fit h-fit rounded-full backdrop-blur-lg">
-            Tickets start at $34.00
+            Tickets start at $26.00
           </span>
           <div className="space-y-[28px]">
-            <h1 className="font-nohemi font-normal text-[32px] leading-[38px] lg:text-[89px] lg:leading-[104px]">
-              Book Alcatraz Ticket <br />
+            <h1 className="font-nohemi font-normal text-[32px] leading-[38px] lg:text-[80px] lg:leading-[104px]">
+              Book FortSumter Ticket <br />
               In <span className="text-[var(--yellow-1)]">60 Seconds</span>
             </h1>
             <Button
@@ -40,7 +40,7 @@ const HeroSection = () => {
               icon={<MoveUpRight className="w-[20px] h-[20px]" />}
               onClick={() => handleBookingModalOpenClose(true)}
             >
-              Book Alcatraz Island Tickets
+              Book Fort Sumter Tickets
             </Button>
           </div>
         </div>
@@ -52,16 +52,18 @@ const HeroSection = () => {
               <HeroSectionCard key={card.id} {...card} />
             ))}
           </div>
-          <div className="max-w-[380px] space-y-[15px]">
+          <div className="max-w-[420px] space-y-[15px]">
             <h2 className="font-nohemi font-semibold md:text-[32px] text-[26px] leading-[42px]">
-              Explore the Island with Us
+              Fort Sumter Tours & Ferry Tickets, Charleston, SC
             </h2>
-            <p className="font-plus-jakarta-sans font-medium md:text-[16px] text-[14px] leading-[26px]">
-              Want to feel one of the really amazing experiences, i.e, Alcatraz
-              Island tours? Enjoy views of the island, sea, and sky from every
-              angle. Book tickets for our 2-3 hour Alcatraz tour to ferry rides,
-              traverse the prison cells, learn from audio tours, and many other
-              charms.
+            <p className="font-plus-jakarta-sans font-medium md:text-[14px] text-[14px] leading-[26px]">
+              Discover where American history began with our Fort Sumter tours
+              in Charleston, SC. Hop on to our service that offers the ferry to
+              Fort Sumter (convenient and reliable access to this historic
+              landmark). Each tour includes a scenic boat ride through
+              Charleston Harbor, a <b> 2.25-hour stay at Fort Sumter, </b> and a
+              return trip. This is just perfect for history lovers, families,
+              and groups (yeah, the views are actually worth it).
             </p>
           </div>
         </div>

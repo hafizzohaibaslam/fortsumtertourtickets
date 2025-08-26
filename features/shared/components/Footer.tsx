@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "@/public/alcatraz-island-logo.svg";
+import Logo from "@/public/fortsumter-logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { footerNavlinks } from "../utils/navlinks";
@@ -18,13 +18,13 @@ const Footer = () => {
         />
         <div className="mt-[25px] mb-[23px]">
           <p className="text-[#8F9FA3] font-plus-jakarta-sans font-normal text-[15px] leading-[22px] max-w-lg">
-            From Breathtaking views of the Golden Gate Bridge, San Francisco
-            skyline, and the bay waters to walking through crumbling cellblocks,
-            solitary confinement cells, and historic corridors.
+            Book your Fort Sumter tickets and explore the site where the Civil
+            War began. Enjoy an unforgettable visit to one of America’s most
+            historic coastal forts.
           </p>
           <div className="flex items-center gap-[12px] mt-[16px]">
             <p className="font-nohemi text-[12px] font-normal leading-[26px]">
-              Let's Plan the Alcatraz Island Tour Now!
+              Let's Plan the Fort Sumter Tour Now!
             </p>
             <div className="w-[10px] h-[10px] bg-white rounded-full"></div>
           </div>

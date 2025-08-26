@@ -29,9 +29,10 @@ const BookingDialog = () => {
               Book Your Experience
             </h1>
             <p className="text-[16px] hidden md:block leading-[26px] font-normal font-plus-jakarta-sans -tracking-[1%] text-[#858C95]">
-              A whisper in the silence of the ocean. Surrounded by the icy
-              waters of San Francisco Bay, it was once home to America's most
-              notorious criminals.
+              Booking Ft Sumter ferry tickets early helps you get the time you
+              want, like on weekends and busy seasons. The ferry ride is part of
+              the trip, with comfortable seating and beautiful views before you
+              reach the fort.
             </p>
           </div>
           {/* Form */}

@@ -5,7 +5,7 @@ import { navlinks } from "../utils/navlinks";
 import { Button } from "@/features/shared/components/Button";
 import { Menu, MoveUpRight } from "lucide-react";
 import { useGlobalContext } from "../utils/GlobalProvider";
-import LogoImage from "@/public/alcatraz-island-logo.svg";
+import LogoImage from "@/public/fortsumter-logo.svg";
 import Image from "next/image";
 
 const Header = () => {

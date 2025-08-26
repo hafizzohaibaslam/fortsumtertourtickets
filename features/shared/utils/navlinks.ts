@@ -6,16 +6,16 @@ export const navlinks = [
     href: ROUTES.HOME,
   },
   {
-    label: "Alcatraz Day Tour",
-    href: ROUTES.ALCATRAZ_DAY_TOUR,
+    label: "Patriots Point",
+    href: ROUTES.PATRIOTS_POINT,
   },
   {
-    label: "Alcatraz Night Tour",
-    href: ROUTES.ALCATRAZ_NIGHT_TOUR,
+    label: "Liberty Square",
+    href: ROUTES.LIBERTY_SQUARE,
   },
   {
-    label: "Alcatraz Island History",
-    href: ROUTES.ALCATRAZ_ISLAND_HISTORY,
+    label: "Fort Sumter History",
+    href: ROUTES.FORT_SUMTER_HISTORY,
   },
   {
     label: "FAQs",

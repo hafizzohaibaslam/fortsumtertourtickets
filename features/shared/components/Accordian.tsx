@@ -40,9 +40,10 @@ const Accordian = ({ data }: AccordianProps) => {
                 : "max-h-0 opacity-0"
             }`}
           >
-            <p className="text-[#414143] font-open-sans font-normal text-[14px] leading-[22px]">
-              {item.answer}
-            </p>
+            <p
+              className="text-[#414143] font-open-sans font-normal text-[14px] leading-[22px]"
+              dangerouslySetInnerHTML={{ __html: item.answer }}
+            ></p>
           </div>
         </div>
       ))}
