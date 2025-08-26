@@ -1,17 +1,17 @@
 import { MapPin } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import Image1 from "@/public/details-page/Image2.webp";
-import Image2 from "@/public/details-page/Image3.webp";
+import Image1 from "@/public/details-page/Image2.jpg";
+import Image3 from "@/public/details-page/Image3.jpg";
 import Image4 from "@/public/details-page/Image4.webp";
 import Image5 from "@/public/details-page/Image5.webp";
-import Image3 from "@/public/details-page/Image1.webp";
+import Image2 from "@/public/details-page/Image1.jpg";
 
-import Night1 from "@/public/details-page/night1.webp";
-import Night2 from "@/public/details-page/night2.webp";
-import Night3 from "@/public/details-page/night3.webp";
-import Night4 from "@/public/details-page/night4.webp";
-import Night5 from "@/public/details-page/night5.webp";
+import Night2 from "@/public/details-page/night1.jpg";
+import Night1 from "@/public/details-page/night2.jpg";
+import Night3 from "@/public/details-page/night3.jpg";
+import Night4 from "@/public/details-page/night4.jpg";
+import Night5 from "@/public/details-page/night5.jpg";
 
 type HeroSectionProps = {
   tourtype: string;
