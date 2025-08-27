@@ -87,7 +87,7 @@ const AlcatrazDayTour = () => {
       <CanonicalTag pathName="/alcatraz-day-tour" />
       <HeroSection tourtype="day" />
       <TourDetails />
-      <PreparationTips />
+      <PreparationTips tour="" />
 
       <WhyChooseUs />
       {/* <WhatCustomersSay /> */}

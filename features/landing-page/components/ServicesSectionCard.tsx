@@ -5,7 +5,6 @@ import { Check, MoveUpRight } from "lucide-react";
 import { Button } from "@/features/shared/components/Button";
 import { useGlobalContext } from "@/features/shared/utils/GlobalProvider";
 import { bookingTypes } from "@/components/BookingForm/BookingForm";
-import { servicesSectionData } from "../utils/data";
 
 type Tag = {
   Icon: typeof Check;
@@ -24,6 +23,7 @@ export type ServicesSectionCardData = {
     detailListItemClassName?: string;
     iconClassName?: string;
   })[];
+  subtitle?: string;
 };
 
 const ServicesSectionCard = ({ data }: { data: ServicesSectionCardData }) => {
@@ -72,9 +72,7 @@ const ServicesSectionCard = ({ data }: { data: ServicesSectionCardData }) => {
         className="mt-[35px] w-fit"
         onClick={() => handleBookingModalOpenClose(true, data.tourType)}
       >
-        {data.tourType === "Day Tour"
-          ? "Get Fort Sumter Tickets"
-          : "Get Fort Sumter Tickets"}
+        {"Get Fort Sumter Tickets"}
       </Button>
     </div>
   );

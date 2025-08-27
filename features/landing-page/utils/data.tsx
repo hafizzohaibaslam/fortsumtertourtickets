@@ -27,7 +27,7 @@ export const servicesSectionData: ServicesSectionCardData[] = [
     title: "Patriots Point",
     subtitle: "Mount Pleasant",
     image: "/landing-page/patriots.webp",
-    tourType: "Day Tour",
+    tourType: "From Patriots Point",
     description: "",
     tags: [
       {
@@ -95,7 +95,7 @@ export const servicesSectionData: ServicesSectionCardData[] = [
     title: "Liberty Square",
     subtitle: "Downtown Charleston",
     image: "/landing-page/liberty.webp",
-    tourType: "Night Tour",
+    tourType: "From Liberty Square",
     description: "",
     tags: [
       {

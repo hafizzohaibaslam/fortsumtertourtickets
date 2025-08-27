@@ -107,7 +107,9 @@ const TourDetails = () => {
         <Button
           variant="primary"
           icon={<MoveUpRight className="w-[20px] h-[20px]" />}
-          onClick={() => handleBookingModalOpenClose(true, "Day Tour")}
+          onClick={() =>
+            handleBookingModalOpenClose(true, "From Patriots Point")
+          }
         >
           Book FortSumter Tickets
         </Button>
