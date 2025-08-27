@@ -36,8 +36,8 @@ const TermsAndConditions = () => {
           </h2>
           <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
             All sales are final. We do not offer compensation for late arrivals
-            or no-shows. Access to tours may be restricted, modified, or
-            canceled due to weather conditions or unforeseen circumstances.
+            or no-shows. Access to tours may be restricted, altered, or canceled
+            due to weather conditions or unforeseen circumstances.
           </p>
           <div className="w-full h-[1px] bg-[#E5E7EB] mt-[32px]"></div>
         </section>
@@ -48,9 +48,8 @@ const TermsAndConditions = () => {
             2. Reservation Details
           </h2>
           <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-            Tickets are valid only for the tour, date, and time specified at the
-            time of booking. All tickets are non-transferable and are issued in
-            the name of the buyer.
+            Tickets are only valid for the specified tour, date, and time.
+            Tickets are non-transferable and issued in the buyer’s name.
           </p>
           <div className="w-full h-[1px] bg-[#E5E7EB] mt-[32px]"></div>
         </section>
@@ -62,8 +61,8 @@ const TermsAndConditions = () => {
           </h2>
           <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
             Adults aged 18 and older must present a valid photo ID when
-            collecting tickets. In some cases, the original credit card used for
-            purchase may also be required for verification.
+            collecting tickets. The original credit card used for purchase may
+            also be required for verification.
           </p>
           <div className="w-full h-[1px] bg-[#E5E7EB] mt-[32px]"></div>
         </section>
@@ -87,8 +86,8 @@ const TermsAndConditions = () => {
           </h2>
           <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
             Please arrive at least one hour prior to your scheduled departure
-            time to allow for security screening and boarding. Ferries board on
-            a first-come, first-served basis.
+            time for security screening and ferry boarding. Ferries board on a
+            first-come, first-served basis.
           </p>
           <div className="w-full h-[1px] bg-[#E5E7EB] mt-[32px]"></div>
         </section>
@@ -105,10 +104,9 @@ const TermsAndConditions = () => {
                 Booking Service
               </h3>
               <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                We provide third-party booking services for Alcatraz tours. A
-                non-refundable service fee of $6.97 per ticket applies. By
-                placing an order, you authorize us to purchase tickets on your
-                behalf.
+                We provide third-party booking for Fort Sumter tickets, with a
+                $7.95 service fee per ticket. By placing an order, you authorize
+                us to purchase tickets in your name.
               </p>
             </div>
 
@@ -125,7 +123,7 @@ const TermsAndConditions = () => {
                 If the second charge is declined, we may attempt to process
                 payment using an alternate card provided by you. We will make up
                 to two additional attempts. If payment continues to fail due to
-                declined authorizations or a lack of response, your booking will
+                declined authorizations or lack of response, your booking will
                 not be completed, and no refunds (including the service fee)
                 will be issued.
               </p>
@@ -165,9 +163,9 @@ const TermsAndConditions = () => {
             9. Availability
           </h2>
           <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-            Submitting an order does not guarantee availability. Alcatraz tours
-            frequently sell out. Your booking is only confirmed once you receive
-            a second email containing your confirmation number.
+            Submitting an order does not guarantee availability. Fort Sumter
+            tours frequently sell out. Your booking is only confirmed once you
+            receive a second email containing your confirmation number.
           </p>
           <div className="w-full h-[1px] bg-[#E5E7EB] mt-[32px]"></div>
         </section>
@@ -178,8 +176,8 @@ const TermsAndConditions = () => {
             10. Changes and Refunds
           </h2>
           <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-            Changes or refunds are not permitted for Alcatraz tickets unless the
-            originally requested time slot is unavailable.
+            Changes or refunds are not permitted for Fort Sumter tickets unless
+            the originally requested time slot is unavailable.
           </p>
           <div className="w-full h-[1px] bg-[#E5E7EB] mt-[32px]"></div>
         </section>
@@ -230,52 +228,52 @@ const TermsAndConditions = () => {
             <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E] flex items-start">
               <span className="text-[#25283E] mr-[8px]">•</span>
               <span>
-                Alcatraz City Cruises is the exclusive operator of Alcatraz
-                Island tours. By booking through alcatrazislandticketing, you
-                authorize alcatrazislandticketing to purchase tickets on your
+                Fort Sumter Tours is the exclusive operator of Fort Sumter
+                Island tours. By booking through fortsumtertourtickets.com, you
+                authorize FortSumterTourTickets.com to purchase tickets on your
                 behalf from the official website at regular pricing.
               </span>
             </li>
             <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E] flex items-start">
               <span className="text-[#25283E] mr-[8px]">•</span>
               <span>
-                Our 6.97 per ticket commission is included in your total and
+                Our $7.95 per ticket commission is included in your total and
                 covers the cost of providing booking services.
               </span>
             </li>
             <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E] flex items-start">
               <span className="text-[#25283E] mr-[8px]">•</span>
               <span>
-                You may choose to book directly with Alcatraz City Cruises
-                through their official website if preferred.
+                You may choose to book directly with Fort Sumter Tours through
+                their official website if preferred.
               </span>
             </li>
             <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E] flex items-start">
               <span className="text-[#25283E] mr-[8px]">•</span>
               <span>
-                We operates alcatrazislandticketing as a third-party booking
-                service only and is not responsible for providing ferry
-                transportation or tour services.
+                FortSumterTourTickets.com operates as a third-party ticket
+                purchasing service and is not responsible for providing ferry
+                transportation.
               </span>
             </li>
             <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E] flex items-start">
               <span className="text-[#25283E] mr-[8px]">•</span>
               <span>
-                All ferry safety protocols and tour terms are governed by
-                Alcatraz City Cruises and apply to all passengers.
+                All ferry safety protocols and tour terms are governed by Fort
+                Sumter Tours and apply to all passengers.
               </span>
             </li>
             <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E] flex items-start">
               <span className="text-[#25283E] mr-[8px]">•</span>
               <span>
-                For cancellations, a $6.97 fee per ticket is retained to cover
+                For cancellations, a $7.95 fee per ticket is retained to cover
                 operational expenses.
               </span>
             </li>
             <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E] flex items-start">
               <span className="text-[#25283E] mr-[8px]">•</span>
               <span>
-                Cancellations must be submitted at least 72 hours in advance of
+                Cancellations must be submitted at least 24 hours in advance of
                 your scheduled visit. No refunds will be issued beyond this
                 deadline.
               </span>
