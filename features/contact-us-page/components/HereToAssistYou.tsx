@@ -16,9 +16,9 @@ const HereToAssistYou = () => {
     const data = new FormData(form);
 
     const res = await sendEmail({
-      subject: `Alcatraz - Contact Submission from ${data.get("name")}`,
+      subject: `Fort Sumter - Contact Submission from ${data.get("name")}`,
       htmlContent: `
-        <h1>Alcatraz - Contact Submission</h1>
+        <h1>Fort Sumter - Contact Submission</h1>
         <p>Name: ${data.get("name")}</p>
         <p>Email: ${data.get("email")}</p>
         <p>Phone: ${data.get("phone")}</p>

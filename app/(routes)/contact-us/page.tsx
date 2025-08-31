@@ -8,7 +8,7 @@ import CanonicalTag from "@/components/CanonicalTag";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Have questions or need assistance? Contact us for support regarding your Alcatraz Island tour bookings, inquiries, or feedback. We're here to help!",
+    "Have questions or need assistance? Contact us for support regarding your Fort Sumter tour bookings, inquiries, or feedback. We're here to help!",
 };
 
 const ContactUsPage = () => {

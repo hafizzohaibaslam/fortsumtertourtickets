@@ -7,7 +7,7 @@ import React from "react";
 
 export const metadata = {
   title: "Blog",
-  description: "Read the latest news and updates from Alcatraz Island Tours.",
+  description: "Read the latest news and updates from Fort Sumter Tours.",
 };
 
 const BlogPage = async () => {

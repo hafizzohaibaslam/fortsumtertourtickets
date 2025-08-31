@@ -19,7 +19,7 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Blog Not Found | Alcatraz Island Tours",
+      title: "Blog Not Found | Fort Sumter Tours",
       description: "The blog you are looking for does not exist.",
     };
   }
@@ -32,7 +32,7 @@ export async function generateMetadata({
       .slice(0, 155) || "Read more from our latest blog posts.";
 
   return {
-    title: `${title} | Alcatraz Island Tours`,
+    title: `${title} | Fort Sumter Tours`,
     description: excerpt,
   };
 }

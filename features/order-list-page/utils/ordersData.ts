@@ -23,7 +23,7 @@ export const ordersData: Order[] = [
     status: "completed",
     total: 650,
     items: {
-      name: "Alcatraz Reservation",
+      name: "Fort Sumter Reservation",
       time: "09:40 AM",
       adults: "1 x 47.95",
       children: "2 x 29.15",
@@ -38,7 +38,7 @@ export const ordersData: Order[] = [
     status: "pending",
     total: 650,
     items: {
-      name: "Alcatraz Reservation",
+      name: "Fort Sumter Reservation",
       time: "09:40 AM",
       adults: "1 x 47.95",
       children: "2 x 29.15",
@@ -53,7 +53,7 @@ export const ordersData: Order[] = [
     status: "in-progress",
     total: 650,
     items: {
-      name: "Alcatraz Reservation",
+      name: "Fort Sumter Reservation",
       time: "09:40 AM",
       adults: "1 x 47.95",
       children: "2 x 29.15",
@@ -68,7 +68,7 @@ export const ordersData: Order[] = [
     status: "pending",
     total: 650,
     items: {
-      name: "Alcatraz Reservation",
+      name: "Fort Sumter Reservation",
       time: "09:40 AM",
       adults: "1 x 47.95",
       children: "2 x 29.15",

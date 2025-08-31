@@ -164,7 +164,7 @@ export const customersCardData = [
     customerJob: "Parent & Explorer",
     customerImage: "/landing-page/customer2.png",
     description:
-      "Did the Alcatraz island tour with my family, even the kids were hooked. The audio tour was wild — hearing real prisoner stories was insane. Plus, those views of San Francisco? unexplainable…",
+      "Did the Fort Sumter tour with my family, even the kids were hooked. The audio tour was wild — hearing real prisoner stories was insane. Plus, those views of San Francisco? unexplainable…",
   },
   {
     id: "3",
@@ -180,7 +180,7 @@ export const customersCardData = [
     customerJob: "College Student",
     customerImage: "/landing-page/customer4.png",
     description:
-      "Booked the Alcatraz day tour with my friends and it was crazy good. The ferry ride was smooth, the views were lit awesome, and walking inside the old prison gave me actual chills. Totally worth it!",
+      "Booked the Fort Sumter day tour with my friends and it was crazy good. The ferry ride was smooth, the views were lit awesome, and walking inside the old prison gave me actual chills. Totally worth it!",
   },
 ];
 

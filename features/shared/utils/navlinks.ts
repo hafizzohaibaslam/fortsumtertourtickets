@@ -38,7 +38,7 @@ export const footerNavlinks = [
     href: "/",
   },
   {
-    label: "Alcatraz Island History",
+    label: "Fort Sumter History",
     href: "/blog",
   },
   {

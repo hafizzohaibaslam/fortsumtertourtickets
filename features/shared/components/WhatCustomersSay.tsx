@@ -12,7 +12,7 @@ const WhatCustomersSay = () => {
         </h1>
         <p className="text-[#25283EB2] font-plus-jakarta-sans font-medium text-[18px] leading-[26px] max-w-xl">
           We take pride in serving our customers with the best experience. Read
-          what they say about alcatraz island tour.
+          what they say about Fort Sumter tour.
         </p>
       </div>
       {/* Cards */}
