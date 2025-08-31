@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "@/public/fortsumter-logo.svg";
+import Logo from "@/public/fortsumter-logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { footerNavlinks } from "../utils/navlinks";

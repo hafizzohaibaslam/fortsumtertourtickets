@@ -25,10 +25,10 @@ const ContactInfo = () => {
           </div>
           <div className="space-y-[25px]">
             <a
-              href="mailto:tickets@alcatrazislandticketing.com"
+              href="mailto:ticketsfortsumtertourtickets.com"
               className="font-nohemi font-medium text-[22px]"
             >
-              tickets@alcatrazislandticketing.com
+              tickets@fortsumtertourtickets.com
             </a>
 
             <p className="font-plus-jakarta-sans font-normal text-[16px] lg:text-[20px] leading-[16px] lg:leading-[31px] text-black">

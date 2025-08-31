@@ -39,36 +39,36 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.alcatrazislandticketing.com"),
+  metadataBase: new URL("https://www.fortsumtertourtickets.com"),
   title: {
-    default: "Alcatraz Island Tours | Book Ticket for Ferry to Alcatraz",
-    template: "%s | Alcatraz Island Tours",
+    default: "Fort Sumter Tours & Ferry Tickets | Charleston Harbor Cruises",
+    template: "%s | Fort Sumter Tours",
   },
   description:
-    "Enjoy an Alcatraz Island tour with a ferry ride. Get your Alcatraz tickets in just 60 seconds with fast online booking and instant confirmation. Tickets start at only $34 — book now!",
+    "Book Fort Sumter tours in Charleston, SC, in less than 60 seconds! Includes ferry ride, Fort Sumter entry, ranger talks, & harbor views. Start from $26.",
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: "https://www.alcatrazislandticketing.com/",
-    siteName: "Alcatraz Island Tours",
-    title: "Alcatraz Island Tours | Book Ticket for Ferry to Alcatraz",
+    url: "https://www.fortsumtertourtickets.com/",
+    siteName: "Fort Sumter Tours",
+    title: "Fort Sumter Tours | Book Ticket for Ferry to Fort Sumter",
     description:
-      "Enjoy an Alcatraz Island tour with a ferry ride. Get your Alcatraz tickets in just 60 seconds with fast online booking and instant confirmation. Tickets start at only $34 — book now!",
+      "Book Fort Sumter tours in Charleston, SC, in less than 60 seconds! Includes ferry ride, Fort Sumter entry, ranger talks, & harbor views. Start from $26.",
     images: [
       {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Alcatraz Island Tours",
+        alt: "Fort Sumter Tours",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alcatraz Island Tours | Book Ticket for Ferry to Alcatraz",
+    title: "Fort Sumter Tours & Ferry Tickets | Charleston Harbor Cruises",
     description:
-      "Enjoy an Alcatraz Island tour with a ferry ride. Get your Alcatraz tickets in just 60 seconds with fast online booking and instant confirmation. Tickets start at only $34 — book now!",
+      "Book Fort Sumter tours in Charleston, SC, in less than 60 seconds! Includes ferry ride, Fort Sumter entry, ranger talks, & harbor views. Start from $26.",
     images: ["/opengraph-image.png"],
   },
   referrer: "strict-origin-when-cross-origin",
@@ -96,7 +96,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* Google Tag Manager */}
-        <Script
+        {/* <Script
           id="gtm-head"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -108,13 +108,13 @@ export default function RootLayout({
               })(window,document,'script','dataLayer','GTM-KMZXDFMX');
             `,
           }}
-        />
+        /> */}
 
         {/* Google Ads (gtag) – keep only if not fired via GTM */}
         <Script
           id="gtag-src"
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17433430697"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17505680030"
         />
         <Script
           id="gtag-init"
@@ -124,7 +124,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-17433430697');
+              gtag('config', 'AW-17505680030');
             `,
           }}
         />
@@ -134,14 +134,14 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {/* GTM noscript */}
-        <noscript>
+        {/* <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KMZXDFMX"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
           />
-        </noscript>
+        </noscript> */}
 
         <Script
           id="tawk-to-widget"

@@ -11,9 +11,19 @@ import CanonicalTag from "@/components/CanonicalTag";
 import PreparationTips from "@/features/landing-page/components/PreparationTips";
 
 export const metadata: Metadata = {
-  title: "Alcatraz Night Tour",
+  title: "Fort Sumter Tours with Ferry Departure from Liberty Square",
   description:
-    "Get your 2-3 hour Alcatraz Night Tour tickets today. Explore the island in darkness with bay views. Book your Alcatraz night tour now from just $34. Hurry!",
+    "Book a ferry (with 1 click) for Fort Sumter tours that depart from Liberty Square in Charleston, SC. Enjoy a harbor ferry ride & the Civil War Fort Sumter.",
+  openGraph: {
+    title: "Fort Sumter Tours with Ferry Departure from Liberty Square",
+    description:
+      "Book a ferry (with 1 click) for Fort Sumter tours that depart from Liberty Square in Charleston, SC. Enjoy a harbor ferry ride & the Civil War Fort Sumter.",
+  },
+  twitter: {
+    title: "Fort Sumter Tours with Ferry Departure from Liberty Square",
+    description:
+      "Book a ferry (with 1 click) for Fort Sumter tours that depart from Liberty Square in Charleston, SC. Enjoy a harbor ferry ride & the Civil War Fort Sumter.",
+  },
 };
 
 const AlcatrazNightTour = () => {
@@ -21,77 +31,157 @@ const AlcatrazNightTour = () => {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "TouristTrip",
-        name: "Alcatraz Night Tour",
+        "@type": "WebPage",
+        "@id": "https://fortsumtertourtickets.com/liberty-square",
+        url: "https://fortsumtertourtickets.com/liberty-square",
+        name: "Fort Sumter Tours with Ferry Departure from Liberty Square",
         description:
-          "Experience a unique night tour of Alcatraz with exclusive access to restricted areas, evening programs, and ferry rides under the stars. Includes live narration and cellhouse audio in multiple languages.",
+          "Book a ferry (with 1 click) for Fort Sumter tours that depart from Liberty Square in Charleston, SC. Enjoy a harbor ferry ride & the Civil War Fort Sumter.",
+        isPartOf: { "@id": "https://fortsumtertourtickets.com#website" },
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://fortsumtertourtickets.com#website",
+        url: "https://fortsumtertourtickets.com",
+        name: "Fort Sumter Tour Tickets",
+        publisher: { "@id": "https://fortsumtertourtickets.com#org" },
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://fortsumtertourtickets.com#org",
+        name: "Fort Sumter Tour Tickets",
+        url: "https://fortsumtertourtickets.com",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://fortsumtertourtickets.com/fortsumter-logo.png",
+        },
+      },
+      {
+        "@type": "TouristTrip",
+        "@id": "https://fortsumtertourtickets.com/liberty-square#tour",
+        name: "Fort Sumter Tours: Departure from Liberty Square",
+        description:
+          "Guided Fort Sumter tour with round-trip ferry from Liberty Square (downtown Charleston), ranger program, museum exhibits, and harbor views of the Battery, Ravenel Bridge, and Castle Pinckney.",
         image:
-          "https://alcatrazislandticketing.com/landing-page/night-tour.webp", // ✅ update with real image URL
+          "https://fortsumtertourtickets.com/landing-page/liberty-square.webp",
+        provider: { "@id": "https://fortsumtertourtickets.com#org" },
+        touristType: "GeneralPublic",
+        duration: "PT2H15M",
         offers: {
           "@type": "Offer",
-          price: "34.00",
+          price: "26.00",
           priceCurrency: "USD",
           availability: "https://schema.org/InStock",
           validFrom: "2025-08-01",
-          url: "https://alcatrazislandticketing.com/landing-page/night-tour.webp",
+          url: "https://fortsumtertourtickets.com/liberty-square", // booking/product URL
         },
-        provider: {
-          "@type": "Organization",
-          name: "Alcatraz Island Ticketing",
-          url: "https://alcatrazislandticketing.com",
-          logo: {
-            "@type": "ImageObject",
-            url: "https://alcatrazislandticketing.com/alcatraz-island-logo.svg", // ✅ update with your logo URL
+        startLocation: {
+          "@type": "Place",
+          name: "Liberty Square (Downtown Charleston, SC)",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Charleston",
+            addressRegion: "SC",
+            addressCountry: "US",
           },
         },
-        touristType: "GeneralPublic",
+        endLocation: {
+          "@type": "Place",
+          name: "Fort Sumter National Monument",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Charleston",
+            addressRegion: "SC",
+            addressCountry: "US",
+          },
+        },
         itinerary: {
           "@type": "ItemList",
           itemListElement: [
             {
               "@type": "TouristAttraction",
-              name: "Ferry ride from Pier 33 at sunset",
+              name: "Round-trip ferry ride from Liberty Square",
             },
             {
               "@type": "TouristAttraction",
-              name: "Exclusive access to restricted prison areas",
+              name: "Direct access to Fort Sumter & on-site exhibits",
             },
             {
               "@type": "TouristAttraction",
-              name: "Evening programs with historic narration",
+              name: "Ranger-led Civil War history program",
+            },
+            {
+              "@type": "TouristAttraction",
+              name: "Self-guided exploration (~1 hour at the fort)",
+            },
+            {
+              "@type": "TouristAttraction",
+              name: "Views: Charleston’s historic waterfront & the Battery",
+            },
+            {
+              "@type": "TouristAttraction",
+              name: "Views: Arthur Ravenel Jr. Bridge",
+            },
+            {
+              "@type": "TouristAttraction",
+              name: "Views: Castle Pinckney & city skyline",
             },
           ],
         },
-        startLocation: {
-          "@type": "Place",
-          name: "Pier 33, San Francisco, CA",
-        },
-        endLocation: {
-          "@type": "Place",
-          name: "Alcatraz Island",
-        },
-        tourBookingPage:
-          "https://alcatrazislandticketing.com/alcatraz-night-tour",
-        tourDuration: "PT3H",
-        tourAvailability: "Tue–Sat, 3:50 PM – 6:30 PM",
       },
       {
         "@type": "FAQPage",
-        mainEntity: alcatrazNightTourAccordianData.map((item) => ({
-          "@type": "Question",
-          name: item.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: item.answer,
+        "@id": "https://fortsumtertourtickets.com/liberty-square#faqs",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "How long is the Fort Sumter boat tour?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "About 2 hours and 15 minutes total, including the ferry ride to and from the fort plus roughly one hour on site.",
+            },
           },
-        })),
+          {
+            "@type": "Question",
+            name: "Are Fort Sumter tours family-friendly?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. The ferry ride and fort exploration suit all ages. Many families also visit nearby attractions like the South Carolina Aquarium.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Which departure is better: Patriots Point or Liberty Square?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Both reach the same fort and include similar on-site experiences. Liberty Square is ideal for downtown Charleston stays; Patriots Point is convenient for Mount Pleasant or pairing with the naval museum.",
+            },
+          },
+        ],
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://fortsumtertourtickets.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Fort Sumter Tours from Liberty Square",
+            item: "https://fortsumtertourtickets.com/liberty-square",
+          },
+        ],
       },
     ],
   };
 
   return (
     <div className="relative">
-      <CanonicalTag pathName="/alcatraz-night-tour" />
+      <CanonicalTag pathName="/liberty-square" />
       <HeroSection tourtype="night" />
       <NightTourDetails />
       <PreparationTips tour={"liberty"} />

@@ -2,13 +2,13 @@
 import type { MetadataRoute } from "next";
 import { fetchPosts } from "@/lib/wp/posts";
 
-const SITE = "https://www.alcatrazislandticketing.com";
+const SITE = "https://fortsumtertourtickets.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const pages: MetadataRoute.Sitemap = [
     { url: `${SITE}/`, lastModified: new Date() },
-    { url: `${SITE}/alcatraz-day-tour`, lastModified: new Date() },
-    { url: `${SITE}/alcatraz-night-tour`, lastModified: new Date() },
+    { url: `${SITE}/patriots-point`, lastModified: new Date() },
+    { url: `${SITE}/liberty-square`, lastModified: new Date() },
     { url: `${SITE}/blog`, lastModified: new Date() },
     { url: `${SITE}/contact-us`, lastModified: new Date() },
     { url: `${SITE}/privacy-policy`, lastModified: new Date() },

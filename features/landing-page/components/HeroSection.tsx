@@ -16,8 +16,8 @@ const HeroSection = () => {
       {/* ✅ Optimized LCP Background Image */}
       <Image
         className="absolute inset-0 w-full h-full object-cover -z-10"
-        src="/fort-sumter-hero.jpg"
-        alt="Panoramic Fort Sumter Full View"
+        src="/fort-sumter-hero.webp"
+        alt="Historic ruins seen during Fort Sumter tours in Charleston, SC"
         priority
         fetchPriority="high"
         fill

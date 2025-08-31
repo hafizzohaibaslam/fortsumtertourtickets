@@ -11,8 +11,8 @@ const FortSummerExperience = () => {
     <div className="h-full lg:h-[640px] relative [background-blend-mode:darken] bg-black/30 bg-cover bg-top bg-no-repeat rounded-[23px] md:p-[30px] p-[10px] lg:p-[52px] flex flex-col justify-center mt-[80px] mb-[70px]">
       <Image
         className="absolute inset-0 w-full h-full object-cover rounded-[23px] -z-10"
-        src="/fortsumter-calltoaction.jpg"
-        alt="ferry to Alcatraz Island, San Francisco"
+        src="/fortsumter-calltoaction.webp"
+        alt="Fort Sumter tours Charleston SC with views of cannons and harbor"
         fill
       />
       <h1 className="max-w-5xl mx-auto text-center font-nohemi font-normal text-white text-[30px] leading-[1.2] lg:text-[64px] lg:leading-[74px]">

@@ -5,7 +5,7 @@ import { navlinks } from "../utils/navlinks";
 import { Button } from "@/features/shared/components/Button";
 import { Menu, MoveUpRight } from "lucide-react";
 import { useGlobalContext } from "../utils/GlobalProvider";
-import LogoImage from "@/public/fortsumter-logo.svg";
+import LogoImage from "@/public/fortsumter-logo.png";
 import Image from "next/image";
 
 const Header = () => {
@@ -28,12 +28,12 @@ const Header = () => {
       {/* Logo */}
       <Link
         href="/"
-        className="bg-[var(--blue-1)] p-[7px] rounded-full border-2 border-black"
+        className="bg-[var(--blue-1)] py-[7px] px-5 rounded-full border-2 border-black"
       >
         <Image
           src={LogoImage}
           alt="logo"
-          className="lg:w-[150px] lg:h-[36px] w-[100px] h-[36px] rounded-full fill-white"
+          className=" lg:h-[30px] w-auto rounded-full fill-white"
         />
       </Link>
       {/* Navigation */}
