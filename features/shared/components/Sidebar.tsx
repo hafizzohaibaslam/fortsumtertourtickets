@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { useGlobalContext } from "../utils/GlobalProvider";
-import LogoImage from "@/public/alcatraz-island-logo.svg";
+import LogoImage from "@/public/fortsumter-logo.png";
 import Image from "next/image";
 import { navlinks } from "../utils/navlinks";
 import { usePathname } from "next/navigation";
