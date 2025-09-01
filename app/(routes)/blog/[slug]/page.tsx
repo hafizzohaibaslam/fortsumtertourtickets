@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import React from "react";
 import CanonicalTag from "@/components/CanonicalTag";
-// import "./blog-styles.css";
+import BlogDetailsMainContent from "@/features/blog-page/components/BlogDetailsMainContent";
 
 // ✅ Dynamic metadata function
 export async function generateMetadata({
@@ -72,7 +72,7 @@ const BlogDetailsPage = async ({
           "h-[400px] md:h-[740px] [background-blend-mode:darken] hover:bg-black/30 transition-all duration-300 bg-cover bg-center rounded-[23px]"
         )}
       >
-        <div className="bg-[#27283E] rounded-[23px] flex flex-col justify-center px-[24px] lg:px-[65px] py-[30px] lg:py-[46px]">
+        <div className="bg-[var(--blue-2)] rounded-[23px] flex flex-col justify-center px-[24px] lg:px-[65px] py-[30px] lg:py-[46px]">
           <div className="md:max-w-[70%] lg:max-w-[50%]">
             <h1 className="font-nohemi font-normal text-[24px] md:text-[42px] leading-[30px] md:leading-[53px] text-white">
               {post.title.rendered}
@@ -82,10 +82,7 @@ const BlogDetailsPage = async ({
       </div>
 
       {/* Main */}
-      <div
-        className="wp-content w-full sm:max-w-[90%] md:max-w-[70%] lg:max-w-[50%] mx-auto"
-        dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-      />
+      <BlogDetailsMainContent post={post} />
 
       {/* Footer */}
       <div className="rounded-[23px] bg-white px-[24px] py-[40px] lg:px-[62px] lg:py-[46px]">
