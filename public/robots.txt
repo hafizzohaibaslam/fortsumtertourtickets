@@ -5,4 +5,4 @@ Disallow: /static/
 Disallow: /checkout
 Disallow: /my-orders
 
-Sitemap: https://www.alcatrazislandticketing.com/sitemap.xml
+Sitemap: https://fortsumtertourtickets.com//sitemap.xml
