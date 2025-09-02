@@ -24,7 +24,11 @@ export async function generateMetadata({
     };
   }
 
-  const title = post.title.rendered.replace(/(<([^>]+)>)/gi, "");
+  const title = post.yoast_head_json.og_title.replace(/(<([^>]+)>)/gi, "");
+  const metadescription = post.yoast_head_json.og_description.replace(
+    /(<([^>]+)>)/gi,
+    ""
+  );
   const excerpt =
     post.excerpt?.rendered
       ?.replace(/(<([^>]+)>)/gi, "")
@@ -33,7 +37,7 @@ export async function generateMetadata({
 
   return {
     title: `${title} | Fort Sumter Tours`,
-    description: excerpt,
+    description: metadescription || excerpt,
   };
 }
 

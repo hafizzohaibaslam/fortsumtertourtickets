@@ -51,7 +51,10 @@ export type Post = {
   status: string;
   type: string;
   featured_media?: number;
-
+  yoast_head_json: {
+    og_title: string;
+    og_description: string;
+  };
   title: {
     rendered: string;
   };
