@@ -61,6 +61,7 @@ const OrdersSummary = ({
     0
   );
   const totalServiceFee = SERVICE_FEE * totalPersons;
+  const tax = tourData?.tax || 0;
   return (
     <div className="w-full lg:w-[30%] h-fit border-[1px] border-[#B7B7B7] rounded-[10px] px-[17px] py-[37px]">
       <div className="space-y-[18px]">
@@ -77,6 +78,11 @@ const OrdersSummary = ({
         })}
         <TotalCard label="Subtotal" value={`$${totalAmount.toFixed(2)}`} />
         <TotalCard
+          label="Operator Fee"
+          value={`$${tourData?.tax || 0}`}
+          isSubItem={true}
+        />
+        <TotalCard
           label="Service Fee"
           value={`${totalPersons} x $${SERVICE_FEE}`}
           isSubItem={true}
@@ -85,7 +91,7 @@ const OrdersSummary = ({
       {/* Total */}
       <TotalCard
         label="Total"
-        value={`$${(totalAmount + totalServiceFee).toFixed(2)}`}
+        value={`$${(totalAmount + totalServiceFee + tax).toFixed(2)}`}
         className="my-[41px] py-[18px] px-[13px] border-t-[0.5px] border-b-[0.5px] border-[#B7B7B7]"
       />
       <div className="space-y-[18px]">

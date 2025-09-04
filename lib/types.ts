@@ -88,6 +88,7 @@ export interface TourData {
   persons: Record<string, number>;
   prices: Record<string, number>;
   subTotal: number;
+  tax: number;
 }
 
 export interface CheckoutData {

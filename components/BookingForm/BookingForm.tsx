@@ -100,22 +100,6 @@ function BookingForm({ onClose }: { onClose: () => void }) {
         .reduce((acc, curr) => acc + curr, 0);
     }, [personCounts]) || 0;
 
-  const formData = {
-    title: TOUR_TITLE + " (" + tourType + ")",
-    date: new Date(data.date).toLocaleDateString("en-US", {
-      month: "2-digit",
-      day: "2-digit",
-      year: "numeric",
-    }),
-    time: data.time,
-    persons: {
-      ...personCounts,
-    },
-    prices,
-    totalAmount: total.toFixed(2),
-    totalPersons,
-  };
-
   useEffect(() => {
     setData({ ...data, time: "" });
   }, [customerRates]);
@@ -138,6 +122,7 @@ function BookingForm({ onClose }: { onClose: () => void }) {
       },
       prices,
       subTotal: total,
+      tax: total * 0.06,
     });
     onClose();
     router.push(ROUTES.CHECKOUT);

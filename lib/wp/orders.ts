@@ -18,7 +18,8 @@ export const createBookingOrder = async (
     0
   );
   try {
-    const totalAmount = bookingData.subTotal + SERVICE_FEE * totalPersons;
+    const totalAmount =
+      bookingData.subTotal + SERVICE_FEE * totalPersons + bookingData.tax;
 
     const line_items = [];
     for (const [personType, quantity] of Object.entries(bookingData.persons)) {
@@ -28,7 +29,11 @@ export const createBookingOrder = async (
           name: `${personType} Ticket`,
           product_id: PRODUCT_ID_TO_ORDER,
           quantity,
-          total: (price * quantity + SERVICE_FEE * quantity).toFixed(2),
+          total: (
+            price * quantity +
+            SERVICE_FEE * quantity +
+            price * quantity * 0.06
+          ).toFixed(2),
           meta_data: [
             {
               key: "Person Type",
@@ -41,6 +46,10 @@ export const createBookingOrder = async (
             {
               key: "Person Price",
               value: price,
+            },
+            {
+              key: "Operator Fee",
+              value: price * quantity * 0.06,
             },
             {
               key: "Service Fee",
