@@ -19,7 +19,7 @@ const PersonSelector = ({
   return (
     <Card className="flex bg-[#F9FAFB] border-[1px] border-[#E5E5E7] py-[15px] px-[22px] justify-between items-center gap-[12px] flex-row">
       <label
-        className="font-plus-jakarta-sans font-semibold text-[14px] leading-[22px] flex flex-col gap-[2px] text-[#1F2024]"
+        className="font-plus-jakarta-sans font-semibold text-[14px] leading-[22px] flex flex-col gap-[2px] max-w-[65%] text-[#1F2024]"
         htmlFor={personType}
       >
         {personType} ${price.toFixed(2)}

@@ -33,7 +33,7 @@ const Header = () => {
         <Image
           src={LogoImage}
           alt="logo"
-          className=" lg:h-[30px] w-auto rounded-full fill-white"
+          className=" h-[30px] w-auto rounded-full fill-white"
         />
       </Link>
       {/* Navigation */}

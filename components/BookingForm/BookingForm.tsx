@@ -253,10 +253,11 @@ function BookingForm({ onClose }: { onClose: () => void }) {
             </div>
           </div>
         ) : (
-          <Message status="error">
-            Tickets for this date are not currently available. Please select a
-            different date.
-          </Message>
+          <></>
+          // <Message status="info">
+          //   Tickets for this date are not currently available. Please select a
+          //   different date.
+          // </Message>
         )}
 
         {data.time && (

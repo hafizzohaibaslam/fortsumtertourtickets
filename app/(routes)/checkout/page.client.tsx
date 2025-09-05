@@ -28,7 +28,7 @@ const CheckoutPageClient = () => {
         <div className="flex flex-col gap-[45px] lg:flex-row lg:justify-between w-full">
           {/* Left Side */}
           <div className="space-y-[30px] w-full lg:w-[60%]">
-            <Message status="error">
+            <Message status="info">
               Please make sure all details exactly match the cardholder's
               information. Any mismatch may cause your ticket to be declined or
               not processed.
