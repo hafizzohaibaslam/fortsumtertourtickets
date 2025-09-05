@@ -7,6 +7,10 @@ type BookingContextType = {
   setTourData: (tourData: TourData | null) => void;
   checkoutData: CheckoutData | null;
   setCheckoutData: (checkoutData: CheckoutData | null) => void;
+  thankYouModalPersonCount: number | null;
+  setThankYouModalPersonCount: (
+    thankYouModalPersonCount: number | null
+  ) => void;
 };
 
 const BookingContext = createContext<BookingContextType | null>(null);
@@ -18,12 +22,17 @@ export const BookingProvider = ({
 }) => {
   const [tourData, setTourData] = useState<TourData | null>(null);
   const [checkoutData, setCheckoutData] = useState<CheckoutData | null>(null);
+  const [thankYouModalPersonCount, setThankYouModalPersonCount] = useState<
+    number | null
+  >(null);
 
   const values = {
     tourData,
     setTourData,
     checkoutData,
     setCheckoutData,
+    thankYouModalPersonCount,
+    setThankYouModalPersonCount,
   };
 
   return (

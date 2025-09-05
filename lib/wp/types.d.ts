@@ -24,7 +24,8 @@ export interface WPOrder {
         | "_person_type"
         | "_person_quantity"
         | "_person_price"
-        | "_service_fee";
+        | "_service_fee"
+        | "_operator_fee";
       value: string;
     }[];
   }[];

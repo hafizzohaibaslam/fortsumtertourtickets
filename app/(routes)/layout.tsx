@@ -3,6 +3,7 @@ import React from "react";
 import Header from "@/features/shared/components/Header";
 import Footer from "@/features/shared/components/Footer";
 import Sidebar from "@/features/shared/components/Sidebar";
+import ThankYouModal from "@/components/ThankYouModal";
 
 const RoutesLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -11,6 +12,7 @@ const RoutesLayout = ({ children }: { children: React.ReactNode }) => {
       <Sidebar />
       {children}
       <Footer />
+      <ThankYouModal />
     </div>
   );
 };

@@ -20,6 +20,7 @@ type AccordianItemProps = {
 };
 
 const AccordianItem = ({ order }: AccordianItemProps) => {
+  console.log("🚀 ~ AccordianItem ~ order:", order);
   const [badgeColor, badgeTextColor] = getBadgeColor(order.status);
   const formattedBadgeText = formatBadgeText(order.status);
 
@@ -31,10 +32,13 @@ const AccordianItem = ({ order }: AccordianItemProps) => {
     order.line_items.map((item) => [item.name, item])
   );
 
-  const totalPersons = Object.values(lineItems).reduce(
+  const totalPersons = order.line_items.reduce(
     (acc, curr) => acc + curr.quantity,
     0
   );
+
+  const operatorFeeAmount =
+    order.line_items.reduce((acc, curr) => acc + Number(curr.total), 0) * 0.06;
 
   return (
     <AccordionItem
@@ -86,6 +90,11 @@ const AccordianItem = ({ order }: AccordianItemProps) => {
                 />
               );
             })}
+            <OrderItem
+              label="Operator Fee"
+              isSecondary={true}
+              value={`$${operatorFeeAmount.toFixed(2)}`}
+            />
             <OrderItem
               label="Service Charges"
               isSecondary={true}

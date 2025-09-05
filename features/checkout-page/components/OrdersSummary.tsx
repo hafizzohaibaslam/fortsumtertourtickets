@@ -16,7 +16,13 @@ const OrdersSummary = ({
   setCanRedirect: (canRedirect: boolean) => void;
 }) => {
   const router = useRouter();
-  const { tourData, checkoutData, setTourData, setCheckoutData } = useBooking();
+  const {
+    tourData,
+    checkoutData,
+    setTourData,
+    setCheckoutData,
+    setThankYouModalPersonCount,
+  } = useBooking();
   const { isFormValid, validationErrors } = useValidation();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -45,6 +51,11 @@ const OrdersSummary = ({
       await createBookingOrder(tourData, checkoutData);
       setCanRedirect(false);
       router.push(ROUTES.ORDER_LIST + `?email=${checkoutData.email}`);
+      const totalPersons = Object.values(tourData.persons).reduce(
+        (acc, curr) => acc + curr,
+        0
+      );
+      setThankYouModalPersonCount(totalPersons);
       setTourData(null);
       setCheckoutData(null);
       toast.success("Order placed successfully", { id: toastId });
