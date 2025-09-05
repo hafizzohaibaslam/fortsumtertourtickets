@@ -74,7 +74,7 @@ const ThankYouModal = () => {
                     <b>Please note:</b> Your order will be charged in two parts.
                     The ticket purchase has already being processed, while the
                     service charges must be paid separately. Kindly complete the
-                    service charge payment using the secure link provided below.
+                    service charge payment using the secure link provided above.
                   </div>
                 </>
               )}
