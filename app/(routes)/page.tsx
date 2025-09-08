@@ -6,7 +6,6 @@ import WhatCustomersSay from "@/features/shared/components/WhatCustomersSay";
 import AskedQuestions from "@/features/shared/components/AskedQuestions";
 import PreparationTips from "@/features/landing-page/components/PreparationTips";
 import { landingPageAccordianData } from "@/lib/accordianData";
-import CanonicalTag from "@/components/CanonicalTag";
 import Highlights from "@/features/shared/components/Highlights";
 
 const Home = () => {
@@ -99,7 +98,6 @@ const Home = () => {
 
   return (
     <div>
-      <CanonicalTag pathName="/" />
       <HeroSection />
       <ServicesSection />
       <Highlights />

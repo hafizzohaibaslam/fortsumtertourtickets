@@ -1,4 +1,3 @@
-import CanonicalTag from "@/components/CanonicalTag";
 import { cn } from "@/lib/utils";
 import React from "react";
 
@@ -17,8 +16,6 @@ const HighlightsMoreContent = ({ showAll }: HighlightsMoreContentProps) => {
       )}
     >
       <div className="rounded-[23px] animate-in slide-in-from-top-4 duration-700 ">
-        <CanonicalTag pathName="/fort-sumter-details" />
-
         {/* Content Sections */}
         <div className="flex flex-col gap-[30px]">
           {/* Section 1 */}

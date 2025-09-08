@@ -7,7 +7,6 @@ import { WPOrder } from "@/lib/wp/types";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ROUTES } from "@/features/shared/utils/routes";
 import Message from "@/components/Message";
-import CanonicalTag from "@/components/CanonicalTag";
 
 const OrdersPageContent = () => {
   const searchParams = useSearchParams();
@@ -28,7 +27,6 @@ const OrdersPageContent = () => {
 
   return (
     <div className="bg-white px-[24px] py-[40px] lg:px-[45px] lg:py-[56px] rounded-[23px] mt-[24px] mb-[40px] space-y-[30px]">
-      <CanonicalTag pathName="/my-orders" />
       <div className="flex flex-col gap-[20px] md:flex-row md:justify-between md:items-center">
         <h1 className="uppercase font-nohemi text-[#424242] font-semibold text-[32px]">
           Order List

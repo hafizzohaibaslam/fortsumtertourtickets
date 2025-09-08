@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import React from "react";
-import CanonicalTag from "@/components/CanonicalTag";
+
 import BlogDetailsMainContent from "@/features/blog-page/components/BlogDetailsMainContent";
 
 // ✅ Dynamic metadata function
@@ -66,7 +66,6 @@ const BlogDetailsPage = async ({
 
   return (
     <div className="my-[30px] space-y-[30px]">
-      <CanonicalTag pathName={`/blog/${post.slug}`} />
       {/* Header */}
       <div
         style={{

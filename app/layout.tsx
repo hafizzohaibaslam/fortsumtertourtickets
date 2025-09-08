@@ -47,7 +47,6 @@ export const metadata: Metadata = {
   description:
     "Book Fort Sumter tours in Charleston, SC, in less than 60 seconds! Includes ferry ride, Fort Sumter entry, ranger talks, & harbor views. Start from $26.",
   robots: { index: true, follow: true },
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://www.fortsumtertourtickets.com/",

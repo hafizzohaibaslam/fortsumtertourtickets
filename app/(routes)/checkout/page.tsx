@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import CheckoutPageClient from "./page.client";
-import CanonicalTag from "@/components/CanonicalTag";
 
 export const metadata: Metadata = {
   title: "Checkout",
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
 const CheckoutPage = () => {
   return (
     <>
-      <CanonicalTag pathName="/checkout" />
       <CheckoutPageClient />
     </>
   );

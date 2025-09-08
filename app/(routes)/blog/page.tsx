@@ -1,4 +1,3 @@
-import CanonicalTag from "@/components/CanonicalTag";
 import BlogCard from "@/features/blog-page/components/BlogCard";
 import BlogList from "@/features/blog-page/components/BlogList";
 import LatestBlog from "@/features/blog-page/components/LatestBlog";
@@ -25,7 +24,6 @@ const BlogPage = async () => {
 
   return (
     <div className="my-[30px] space-y-[30px]">
-      <CanonicalTag pathName="/blog" />
       <div className="rounded-[23px] space-y-[30px] px-[24px] py-[40px] lg:px-[62px] lg:py-[52px]">
         <h1 className="font-nohemi font-semibold text-[32px] leading-[32px] text-[#25283E]">
           Latest Blog

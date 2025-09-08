@@ -7,7 +7,6 @@ import TourDetails from "@/features/details-page/components/TourDetails";
 import WhyChooseUs from "@/features/landing-page/components/WhyChooseUs";
 import { alcatrazDayTourAccordianData } from "@/lib/accordianData";
 import { Metadata } from "next";
-import CanonicalTag from "@/components/CanonicalTag";
 import PreparationTips from "@/features/landing-page/components/PreparationTips";
 
 export const metadata: Metadata = {
@@ -164,7 +163,6 @@ const AlcatrazDayTour = () => {
 
   return (
     <div className="relative">
-      <CanonicalTag pathName="/patriots-point" />
       <HeroSection tourtype="day" />
       <TourDetails />
       <PreparationTips tour="" />

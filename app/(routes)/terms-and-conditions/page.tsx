@@ -1,4 +1,3 @@
-import CanonicalTag from "@/components/CanonicalTag";
 import { Metadata } from "next";
 import React from "react";
 
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
 const TermsAndConditions = () => {
   return (
     <div className="mt-[24px] bg-white px-[24px] py-[30px] lg:px-[64px] lg:py-[52px] rounded-[23px]">
-      <CanonicalTag pathName="/terms-and-conditions" />
       {/* Header Section */}
       <div className="mb-[40px] lg:mb-[60px]">
         <h1 className="font-nohemi font-medium text-[#25283E] text-[32px] leading-[38px] lg:text-[48px] lg:leading-[56px] mb-[16px]">
