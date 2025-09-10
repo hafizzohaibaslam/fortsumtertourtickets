@@ -2,7 +2,6 @@
 
 import { toast } from "sonner";
 import { useMemo, useState } from "react";
-import useEnabledDates from "@/hooks/useEnabledDates";
 import Message from "@/components/Message";
 import { BookingFormData } from "@/lib/types";
 import TimeSelector from "../TimeSelector";
@@ -10,9 +9,6 @@ import PersonSelector from "../PersonSelector";
 import { Moon, MoveUpRight, Sun } from "lucide-react";
 import { DatePicker } from "../ui/date-picker";
 import TourTypeSelector from "../TourTypeSelector";
-import { convertTimeFormat } from "./functions";
-import useCustomerRates from "@/hooks/useCustomerRates";
-import { Skeleton } from "../ui/skeleton";
 import { useEffect } from "react";
 import useBooking from "@/providers/booking-provider";
 import { ROUTES } from "@/features/shared/utils/routes";
@@ -24,39 +20,55 @@ export const bookingTypes = {
   "From Patriots Point": {
     icon: <Sun size={20} />,
     id: 118027,
+    times: ["10:45 AM", "1:30 PM"],
   },
   "From Liberty Square": {
     icon: <Moon size={20} />,
     id: 118097,
+    times: ["9:30 AM", "12:00 PM", "2:45 PM"],
   },
 };
 
+type PersonType = {
+  type: string;
+  age: string;
+  price: number;
+  isAvailable?: (persons: BookingFormData["persons"]) => boolean;
+  max: number;
+};
+
+const personTypes: PersonType[] = [
+  { type: "Adult", age: "12 - 61 years", price: 40, max: 14 },
+  {
+    type: "Senior/Military",
+    age: "62 years & older/Active Military",
+    price: 36,
+    max: 14,
+  },
+  { type: "Children", age: "4 - 11 years", price: 26, max: 14 },
+  {
+    type: "Infants",
+    age: "Under 4 years",
+    price: 0,
+    max: 5,
+    isAvailable: (persons: BookingFormData["persons"]) => {
+      return persons["Adult"] > 0 || persons["Senior/Military"] > 0;
+    },
+  },
+];
+
 const TOUR_TITLE = "Fort Sumter";
+
+const datesToSkip = ["2025-11-27", "2025-12-25"];
 
 function BookingForm({ onClose }: { onClose: () => void }) {
   const { setTourData } = useBooking();
-  const handleDateIncrementAfter16 = (date?: Date) => {
-    const nowLocalTime = new Date(date || new Date());
-    const nowESTString = nowLocalTime.toLocaleString("en-US", {
-      timeZone: "America/New_York",
-    });
-    const nowEST = new Date(nowESTString);
-    if (nowEST.getHours() >= 16) {
-      nowEST.setDate(nowEST.getDate() + 1);
-    }
-    return new Date(nowEST);
-  };
 
   const [data, setData] = useState<BookingFormData>({
     date: new Date(),
     month: new Date(),
     time: "",
     persons: {},
-    prices: {},
-    totalAmount: "0",
-    totalPersons: 0,
-    title: "",
-    availableSeats: 0,
   });
 
   const { tourType, setTourType } = useGlobalContext();
@@ -64,45 +76,24 @@ function BookingForm({ onClose }: { onClose: () => void }) {
   const bookingType = bookingTypes[tourType as keyof typeof bookingTypes];
   const router = useRouter();
 
-  const { enabledDates, datesLoading: enabledDatesLoading } = useEnabledDates({
-    year: data.date.toISOString().split("-")[0],
-    month: data.date.toISOString().split("-")[1],
-    bookingType: bookingType.id,
-  });
-  console.log("🚀 ~ BookingForm ~ enabledDates:", enabledDates);
-  const monthAvailable = useMemo(
-    () => Object.values(enabledDates).some((date) => date.is_bookable),
-    [enabledDates]
-  );
-
-  const {
-    customerRates,
-    customerRatesLoading: availableTimesLoading,
-    customerRatesError: availableTimesError,
-  } = useCustomerRates(bookingType.id, [data.date, tourType]);
-
   const personCounts: Record<string, number> = {};
   const prices: Record<string, number> = {};
   let totalPersons = 0;
-  customerRates?.forEach((price) => {
-    personCounts[price[0]] = data.persons[price[0]] || 0;
-    prices[price[0]] = price[1] || 0;
-    totalPersons += personCounts[price[0]];
+  personTypes?.forEach((type) => {
+    personCounts[type.type] = data.persons[type.type] || 0;
+    prices[type.type] = type.price || 0;
+    totalPersons += personCounts[type.type];
   });
   const total =
     useMemo(() => {
-      return customerRates
-        ?.map((price) => {
-          const value = data.persons[price[0]] || 0;
-          return value * price[1];
+      return personTypes
+        ?.map((type) => {
+          const value = data.persons[type.type] || 0;
+          return value * type.price;
         })
         .filter((value) => value !== null)
         .reduce((acc, curr) => acc + curr, 0);
-    }, [personCounts]) || 0;
-
-  useEffect(() => {
-    setData({ ...data, time: "" });
-  }, [customerRates]);
+    }, [personCounts, prices]) || 0;
 
   const onSubmit = async () => {
     if (totalPersons > 14) {
@@ -141,9 +132,6 @@ function BookingForm({ onClose }: { onClose: () => void }) {
             setData({
               ...data,
               persons: {},
-              prices: {},
-              totalAmount: "0",
-              totalPersons: 0,
               time: "",
             });
           }}
@@ -158,7 +146,7 @@ function BookingForm({ onClose }: { onClose: () => void }) {
             >
               Date
             </label>
-            {!enabledDatesLoading && !monthAvailable && (
+            {!isMonthAvailable(data.date) && (
               <Message status="error">
                 Tickets for this month are not currently available. Sign up to
                 be the first in line!. Please{" "}
@@ -175,7 +163,7 @@ function BookingForm({ onClose }: { onClose: () => void }) {
             <DatePicker
               date={data.date}
               filterDate={(date) => {
-                return enabledDates[date.toDateString()]?.is_bookable;
+                return filterDate(date);
               }}
               className="p-[16px] min-h-[56px] mt-[4px]"
               onChange={(date) => {
@@ -194,91 +182,62 @@ function BookingForm({ onClose }: { onClose: () => void }) {
                   date: firstOfMonth,
                 });
               }}
-              loading={enabledDatesLoading}
+              loading={false}
             />
           </div>
         )}
 
-        {tourType &&
-        !enabledDatesLoading &&
-        data.date &&
-        enabledDates[data.date.toDateString()]?.is_bookable ? (
+        {tourType && data.date && (
           <div className="mb-6 w-full">
             <label className="text-lg font-bold mb-3 block">Time</label>
             <div className="grid grid-cols-2 md:grid-cols-3 md:gap-[15px] gap-[10px]">
-              {!enabledDates[data.date.toDateString()]?.is_bookable &&
-                !availableTimesLoading && (
-                  <Message status="error" className="col-span-2">
-                    No Tickets Available for this date
-                  </Message>
-                )}
-              {availableTimesLoading ? (
-                <>
-                  {Array(10)
-                    .fill(0)
-                    .map((_, index) => (
-                      <Skeleton
-                        key={index}
-                        className="w-full h-10 rounded-md"
-                      />
-                    ))}
-                </>
+              {!filterDate(data.date) ? (
+                <Message status="error" className="col-span-2">
+                  No Tickets Available for this date
+                </Message>
               ) : (
-                enabledDates[data.date.toDateString()].availabilities.map(
-                  (t, index) => {
-                    const start_at = convertTimeFormat(
-                      new Date(t.utc_start_at)
-                    );
-                    return (
-                      <TimeSelector
-                        key={index}
-                        time={{
-                          time: start_at,
-                          availableSeats: t.bookable_capacity,
-                          vacancy: t.bookable_capacity,
-                        }}
-                        setTime={() => {
-                          setData({
-                            ...data,
-                            time: start_at,
-                            availableSeats: t.bookable_capacity,
-                          });
-                        }}
-                        isSelected={start_at === data.time}
-                      />
-                    );
-                  }
-                )
+                bookingType.times.map((t, index) => {
+                  return (
+                    <TimeSelector
+                      key={index}
+                      time={t}
+                      setTime={() => {
+                        setData({
+                          ...data,
+                          time: t,
+                        });
+                      }}
+                      isSelected={t === data.time}
+                    />
+                  );
+                })
               )}
             </div>
           </div>
-        ) : (
-          <></>
-          // <Message status="info">
-          //   Tickets for this date are not currently available. Please select a
-          //   different date.
-          // </Message>
         )}
 
         {data.time && (
           <div className="w-full space-y-2 mb-4 ">
-            {customerRates?.map((price, index) => {
+            {personTypes?.map((type, index) => {
               return (
                 <PersonSelector
                   key={index}
-                  personType={price[0]}
-                  price={price[1]}
-                  max={data.availableSeats - totalPersons}
+                  personType={type.type}
+                  price={type.price}
+                  availableSeats={14}
+                  totalPersons={totalPersons}
+                  max={type.max}
+                  disabled={type.isAvailable && !type.isAvailable(personCounts)}
                   setValue={(values) => {
                     setData({
                       ...data,
                       persons: {
                         ...data.persons,
-                        [price[0]]: values,
+                        [type.type]: values,
                       },
                     });
                   }}
-                  value={data.persons[price[0]] || 0}
+                  value={personCounts[type.type] || 0}
                 />
               );
             })}
@@ -310,3 +269,29 @@ function BookingForm({ onClose }: { onClose: () => void }) {
 }
 
 export default BookingForm;
+
+const filterDate = (date: Date) => {
+  //today and future dates until end of 2025, but skip the dates in datesToSkip
+  const today = new Date();
+  const isSkipped = datesToSkip
+    .map((date) => new Date(date))
+    .some((d) => d.toDateString() === date.toDateString());
+  const todayWithZeroTime = new Date(today.setHours(0, 0, 0, 0));
+  const endOf2025 = new Date("2025-12-31");
+  if (date < todayWithZeroTime || date > endOf2025 || isSkipped) return false;
+  return true;
+};
+
+const isMonthAvailable = (date: Date) => {
+  //check if the month is past month or from next year, then return false
+  const today = new Date();
+  const todayWithZeroTime = new Date(today.setHours(0, 0, 0, 0));
+  const month = date.getMonth();
+  const year = date.getFullYear();
+  if (
+    month < todayWithZeroTime.getMonth() ||
+    year > todayWithZeroTime.getFullYear() + 1
+  )
+    return false;
+  return true;
+};

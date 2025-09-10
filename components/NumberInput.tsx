@@ -7,18 +7,24 @@ interface NumberInputProps {
   value: number;
   step: number;
   onChange: (value: number) => void;
-  max?: number | undefined;
+  availableSeats?: number;
+  totalPersons?: number;
+  max?: number;
 }
 
 const NumberInput = ({
   value,
   step,
   onChange,
-  max = undefined,
+  availableSeats = 0,
+  totalPersons = 0,
+  max = 0,
 }: NumberInputProps) => {
   const id = useId();
-  const canStepUp = max ? max > 0 : false;
+  const canStepUp = totalPersons < availableSeats && value < max;
   const canStepDown = value > 0;
+  console.log("🚀 ~ NumberInput ~ canStepDown:", canStepDown);
+  console.log("🚀 ~ NumberInput ~ canStepUp:", canStepUp);
 
   const handleStepUp = () => canStepUp && onChange(value + step);
   const handleStepDown = () => canStepDown && onChange(value - step);
@@ -34,14 +40,7 @@ const NumberInput = ({
       >
         <Minus size={10} />
       </button>
-      <input
-        type="number"
-        id={id}
-        value={value}
-        step={step}
-        onChange={(e) => onChange(Number(e.target.value))}
-        className="pointer-events-none w-full max-w-10 text-center !border-none focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-      />
+      <span className="px-2">{value}</span>
       <button
         className={cn(
           "bg-[#F3F4F6] w-[28px] h-[28px] rounded-full flex items-center justify-center  text-[#1F2A37] text-2xl cursor-pointer hover:bg-[#E5E5E7]",

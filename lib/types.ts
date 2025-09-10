@@ -108,15 +108,10 @@ export interface CheckoutData {
 }
 
 export interface BookingFormData {
-  title: string;
   date: Date;
   month: Date;
   time?: string;
   persons: Record<string, number>;
-  prices: Record<string, number>;
-  totalAmount: string;
-  totalPersons: number;
-  availableSeats: number;
 }
 
 export type AccordianItem = {
