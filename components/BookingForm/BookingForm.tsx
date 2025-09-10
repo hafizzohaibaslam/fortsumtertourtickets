@@ -197,6 +197,14 @@ function BookingForm({ onClose }: { onClose: () => void }) {
                 </Message>
               ) : (
                 bookingType.times.map((t, index) => {
+                  console.log("🚀 ~ t:", t);
+                  console.log(
+                    "🚀 ~ data.date.getMonth():",
+                    data.date.getMonth()
+                  );
+                  if (t === "2:45 PM" && data.date.getMonth() > 10) {
+                    return null;
+                  }
                   return (
                     <TimeSelector
                       key={index}
