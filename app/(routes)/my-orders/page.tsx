@@ -7,6 +7,7 @@ import { WPOrder } from "@/lib/wp/types";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ROUTES } from "@/features/shared/utils/routes";
 import Message from "@/components/Message";
+import { reportPurchase } from "@/lib/gtag";
 
 const OrdersPageContent = () => {
   const searchParams = useSearchParams();
@@ -17,11 +18,38 @@ const OrdersPageContent = () => {
 
   useEffect(() => {
     setIsLoading(true);
+
     const fetchOrders = async () => {
-      const orders = await getOrders(email);
+      const orders: WPOrder[] = await getOrders(email);
+
+      if (!orders || orders.length === 0) {
+        console.log("No orders found");
+        setIsLoading(false);
+        return;
+      }
+
+      // ✅ Find the latest order by date_created
+      const latestOrder = orders.reduce((latest, current) => {
+        return new Date(current.date_created) > new Date(latest.date_created)
+          ? current
+          : latest;
+      });
+
+      // ✅ Count total tickets from that order
+      const ticketCount = latestOrder.line_items.reduce((sum, item) => {
+        return sum + (item.quantity || 0);
+      }, 0);
+
+      // ✅ Calculate value (tickets * 6.97)
+      const tagValue = ticketCount * 6.97;
+
+      // ✅ Fire Google Ads purchase conversion
+      reportPurchase(tagValue, "USD");
+
       setOrders(orders);
       setIsLoading(false);
     };
+
     fetchOrders();
   }, [email]);
 
