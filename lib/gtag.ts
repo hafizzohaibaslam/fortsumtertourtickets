@@ -9,7 +9,7 @@ declare global {
 }
 
 export const ADS_ID = "AW-17505680030";
-export const PURCHASE_LABEL = "ABCDefghijkLmnoPQR";
+export const PURCHASE_LABEL = "4P44CIeWlpobEJ71rZtB";
 
 export function reportPurchase(value: number, currency = "USD") {
   if (typeof window === "undefined") return; // SSR guard
