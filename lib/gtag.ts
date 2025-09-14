@@ -13,7 +13,7 @@ export const PURCHASE_LABEL = "ABCDefghijkLmnoPQR";
 
 export function reportPurchase(value: number, currency = "USD") {
   if (typeof window === "undefined") return; // SSR guard
-  window.gtag?.("event", "conversion", {
+  window.gtag?.("event", "purchase", {
     send_to: `${ADS_ID}/${PURCHASE_LABEL}`,
     value,
     currency,
