@@ -13,7 +13,9 @@ export const metadata: Metadata = {
   title: "Fort Sumter Tours with Ferry Departure from Liberty Square",
   description:
     "Book a ferry (with 1 click) for Fort Sumter tours that depart from Liberty Square in Charleston, SC. Enjoy a harbor ferry ride & the Civil War Fort Sumter.",
+  alternates: { canonical: "/liberty-square" }, // ✅ add this
   openGraph: {
+    url: "https://fortsumtertourtickets.com/liberty-square", // ✅ add url
     title: "Fort Sumter Tours with Ferry Departure from Liberty Square",
     description:
       "Book a ferry (with 1 click) for Fort Sumter tours that depart from Liberty Square in Charleston, SC. Enjoy a harbor ferry ride & the Civil War Fort Sumter.",
@@ -23,6 +25,7 @@ export const metadata: Metadata = {
     description:
       "Book a ferry (with 1 click) for Fort Sumter tours that depart from Liberty Square in Charleston, SC. Enjoy a harbor ferry ride & the Civil War Fort Sumter.",
   },
+  robots: { index: true, follow: true }, // ✅ explicit
 };
 
 const AlcatrazNightTour = () => {
