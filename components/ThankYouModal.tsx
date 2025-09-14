@@ -11,16 +11,16 @@ import Link from "next/link";
 import Image from "next/image";
 
 const SERVICE_CHANGES_PAYMENT_LINKS = {
-  1: "https://buy.stripe.com/14A28rd88bhX0b83MV2kw0B",
-  2: "https://buy.stripe.com/5kQ7sLd880Dj6zwfvD2kw0C",
-  3: "https://buy.stripe.com/6oUeVdfgg71Hf623MV2kw0D",
-  4: "https://buy.stripe.com/3cI28rfggbhX8HE5V32kw0E",
-  5: "https://buy.stripe.com/fZu6oH9VWgCh4ro83b2kw0F",
-  6: "https://buy.stripe.com/dRmbJ1gkkadT8HEcjr2kw0G",
-  7: "https://buy.stripe.com/fZu00jc4485L8HE5V32kw0H",
-  8: "https://buy.stripe.com/fZu9ATfgggCh5vs6Z72kw0I",
-  9: "https://buy.stripe.com/dRm5kD8RSeu9aPMabj2kw0J",
-  10: "https://buy.stripe.com/3cI4gz3xy0Dj7DA1EN2kw0K",
+  1: "https://buy.stripe.com/fZubJ3d2p9cDfL7f8e6oo03",
+  2: "https://buy.stripe.com/8x2fZj2nLfB1cyVgci6oo02",
+  3: "https://buy.stripe.com/5kQ5kF9Qd9cD7eB6BI6oo01",
+  4: "https://buy.stripe.com/fZu6oJe6t3Sj1Uh7FM6oo05",
+  5: "https://buy.stripe.com/7sYbJ3geB1Kb0Qdd066oo04",
+  6: "https://buy.stripe.com/cNi28taUh1KbcyV5xE6oo06",
+  7: "https://buy.stripe.com/28E5kFfax0G7fL77FM6oo07",
+  8: "https://buy.stripe.com/6oU6oJ9Qd3Sj9mJf8e6oo08",
+  9: "https://buy.stripe.com/9B63cx4vT60rfL7gci6oo09",
+  10: "https://buy.stripe.com/28E8wRgeB4Wn2YlbW26oo0a",
 };
 
 const ThankYouModal = () => {
