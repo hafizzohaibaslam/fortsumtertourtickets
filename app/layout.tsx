@@ -39,7 +39,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fortsumtertourtickets.com"),
+  metadataBase: new URL("https://fortsumtertourtickets.com"),
   title: {
     default: "Fort Sumter Tours & Ferry Tickets | Charleston Harbor Cruises",
     template: "%s | Fort Sumter Tours",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
-    url: "https://www.fortsumtertourtickets.com/",
+    url: "https://fortsumtertourtickets.com/",
     siteName: "Fort Sumter Tours",
     title: "Fort Sumter Tours | Book Ticket for Ferry to Fort Sumter",
     description:
