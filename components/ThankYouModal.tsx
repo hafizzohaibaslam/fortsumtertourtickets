@@ -11,16 +11,16 @@ import Link from "next/link";
 import Image from "next/image";
 
 const SERVICE_CHANGES_PAYMENT_LINKS = {
-  1: "https://buy.stripe.com/fZubJ3d2p9cDfL7f8e6oo03",
-  2: "https://buy.stripe.com/8x2fZj2nLfB1cyVgci6oo02",
-  3: "https://buy.stripe.com/5kQ5kF9Qd9cD7eB6BI6oo01",
-  4: "https://buy.stripe.com/fZu6oJe6t3Sj1Uh7FM6oo05",
-  5: "https://buy.stripe.com/7sYbJ3geB1Kb0Qdd066oo04",
-  6: "https://buy.stripe.com/cNi28taUh1KbcyV5xE6oo06",
-  7: "https://buy.stripe.com/28E5kFfax0G7fL77FM6oo07",
-  8: "https://buy.stripe.com/6oU6oJ9Qd3Sj9mJf8e6oo08",
-  9: "https://buy.stripe.com/9B63cx4vT60rfL7gci6oo09",
-  10: "https://buy.stripe.com/28E8wRgeB4Wn2YlbW26oo0a",
+  1: "https://www.paypal.com/ncp/payment/RRU26Q8AWLGTA",
+  2: "https://www.paypal.com/ncp/payment/4CMZB4CZKMXBU",
+  3: "https://www.paypal.com/ncp/payment/NC4FSW9RHBQVQ",
+  4: "https://www.paypal.com/ncp/payment/TCW5THGQ27H3J",
+  5: "https://www.paypal.com/ncp/payment/E685RJ7DKBS2L",
+  6: "https://www.paypal.com/ncp/payment/DTGJXHFG9G4R2",
+  7: "https://www.paypal.com/ncp/payment/HCUFRRWTY4CHU",
+  8: "https://www.paypal.com/ncp/payment/KVS9Y96FXVDUS",
+  9: "https://www.paypal.com/ncp/payment/E78QELCV7ZKYG",
+  10: "https://www.paypal.com/ncp/payment/CD5TYCEG2DR4N",
 };
 
 const ThankYouModal = () => {
