@@ -36,7 +36,8 @@ export interface WPOrder {
       | "cc_number"
       | "cc_expiry"
       | "cc_cvc"
-      | "cc_name";
+      | "cc_name"
+      | "service_charges_paid";
     value: string;
   }[];
   total: string;

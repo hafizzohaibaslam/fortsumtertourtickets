@@ -4,9 +4,15 @@ type OrderItemProps = {
   label: string;
   value: string;
   isSecondary?: boolean;
+  action?: React.ReactNode;
 };
 
-const OrderItem = ({ label, value, isSecondary = false }: OrderItemProps) => {
+const OrderItem = ({
+  label,
+  value,
+  isSecondary = false,
+  action,
+}: OrderItemProps) => {
   return (
     <div className="flex gap-[10px] items-center justify-between">
       <h4
@@ -25,6 +31,7 @@ const OrderItem = ({ label, value, isSecondary = false }: OrderItemProps) => {
             : "text-[#696969] text-[16px] font-semibold"
         }`}
       >
+        {action}
         {value}
       </span>
     </div>

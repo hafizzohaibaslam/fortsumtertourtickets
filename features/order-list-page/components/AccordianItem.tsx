@@ -6,7 +6,6 @@ import {
 import AccordianHeading from "./AccordianHeading";
 import Badge from "./Badge";
 import React from "react";
-import { Order } from "../utils/ordersData";
 import { getBadgeColor } from "../utils/getBadgeColor";
 import { formatBadgeText } from "../utils/formatBadgeText";
 import OrderItem from "./OrderItem";
@@ -14,12 +13,15 @@ import { cn } from "@/lib/utils";
 import { WPOrder } from "@/lib/wp/types";
 import { formatDate } from "date-fns";
 import { SERVICE_FEE } from "@/lib/constants";
+import { useRouter } from "next/navigation";
+import PayServiceChargesButton from "@/components/PayServiceChargesButton";
 
 type AccordianItemProps = {
   order: WPOrder;
 };
 
 const AccordianItem = ({ order }: AccordianItemProps) => {
+  const router = useRouter();
   console.log("🚀 ~ AccordianItem ~ order:", order);
   const [badgeColor, badgeTextColor] = getBadgeColor(order.status);
   const formattedBadgeText = formatBadgeText(order.status);
@@ -58,11 +60,14 @@ const AccordianItem = ({ order }: AccordianItemProps) => {
             title="Status"
             value={order.status}
             badge={
-              <Badge
-                text={formattedBadgeText}
-                backgroundColor={badgeColor || ""}
-                textColor={badgeTextColor || ""}
-              />
+              <div className="flex flex-col gap-[10px]">
+                <Badge
+                  text={formattedBadgeText}
+                  backgroundColor={badgeColor || ""}
+                  textColor={badgeTextColor || ""}
+                />
+                <PayServiceChargesButton order={order} />
+              </div>
             }
           />
           <AccordianHeading title="Total" value={`$${order.total}`} />
@@ -99,6 +104,7 @@ const AccordianItem = ({ order }: AccordianItemProps) => {
               label="Service Charges"
               isSecondary={true}
               value={`$${SERVICE_FEE * totalPersons}`}
+              action={<PayServiceChargesButton order={order} />}
             />
             <hr />
             <OrderItem

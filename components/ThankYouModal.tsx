@@ -6,35 +6,18 @@ import { DialogTitle } from "./ui/dialog";
 import { DialogOverlay } from "./ui/dialog";
 import { DialogPortal } from "./ui/dialog";
 import useBooking from "@/providers/booking-provider";
-import { CheckCircle } from "lucide-react";
+import { Clock } from "lucide-react";
+import PayServiceChargesButton from "./PayServiceChargesButton";
 import Link from "next/link";
-import Image from "next/image";
-
-const SERVICE_CHANGES_PAYMENT_LINKS = {
-  1: "https://www.paypal.com/ncp/payment/RRU26Q8AWLGTA",
-  2: "https://www.paypal.com/ncp/payment/4CMZB4CZKMXBU",
-  3: "https://www.paypal.com/ncp/payment/NC4FSW9RHBQVQ",
-  4: "https://www.paypal.com/ncp/payment/TCW5THGQ27H3J",
-  5: "https://www.paypal.com/ncp/payment/E685RJ7DKBS2L",
-  6: "https://www.paypal.com/ncp/payment/DTGJXHFG9G4R2",
-  7: "https://www.paypal.com/ncp/payment/HCUFRRWTY4CHU",
-  8: "https://www.paypal.com/ncp/payment/KVS9Y96FXVDUS",
-  9: "https://www.paypal.com/ncp/payment/E78QELCV7ZKYG",
-  10: "https://www.paypal.com/ncp/payment/CD5TYCEG2DR4N",
-};
 
 const ThankYouModal = () => {
-  const { thankYouModalPersonCount, setThankYouModalPersonCount } =
-    useBooking();
-  const paymentLink =
-    SERVICE_CHANGES_PAYMENT_LINKS?.[
-      thankYouModalPersonCount as keyof typeof SERVICE_CHANGES_PAYMENT_LINKS
-    ];
+  const { thankYouModalOrder, setThankYouModalOrder } = useBooking();
+  if (!thankYouModalOrder) return null;
   return (
     <div>
       <Dialog
-        open={thankYouModalPersonCount !== null}
-        onOpenChange={() => setThankYouModalPersonCount(null)}
+        open={thankYouModalOrder !== null}
+        onOpenChange={() => setThankYouModalOrder(null)}
       >
         <DialogPortal>
           <DialogOverlay />
@@ -45,39 +28,30 @@ const ThankYouModal = () => {
               </DialogTitle>
             </DialogHeader>
             <div className="flex flex-col items-center space-y-4 px-4">
-              <CheckCircle className="text-green-500" size={50} />
+              <Clock className="text-yellow-500" size={50} />
               <p className="text-center text-lg">
-                Your booking has been confirmed and we've sent the details to
-                your email.
+                Your order has be received. Please pay the service charges to
+                get your tickets processed.
               </p>
-              {paymentLink && (
-                <>
-                  <Link
-                    href={paymentLink}
-                    target="_blank"
-                    className="rounded-md px-4 py-2 bg-white text-black shadow-md border border-gray-200 hover:bg-gray-100 flex items-center gap-2"
-                  >
-                    <Image
-                      src="/stripe-icon.jpeg"
-                      alt="stripe"
-                      width={20}
-                      height={20}
-                      className="rounded-sm"
-                    />
-                    Pay Service Changes
-                  </Link>
-                  <p className="text-center text-xs max-w-[300px] mx-auto">
-                    Please pay your service charges through this secure Stripe
-                    checkout. Payment link is also sent to your email.
-                  </p>
-                  <div className="mt-8 text-xs text-gray-500 text-center">
-                    <b>Please note:</b> Your order will be charged in two parts.
-                    The ticket purchase has already being processed, while the
-                    service charges must be paid separately. Kindly complete the
-                    service charge payment using the secure link provided above.
-                  </div>
-                </>
-              )}
+              <PayServiceChargesButton order={thankYouModalOrder} />
+              <p className="text-center text-xs max-w-[300px] mx-auto">
+                Pay through this secure Stripe checkout.
+              </p>
+              <div className="mt-8 text-xs text-gray-500 text-center">
+                <b>Please note:</b> Your order will be charged in two parts. The
+                ticket purchase has already being processed, while the service
+                charges must be paid separately. Kindly complete the service
+                charge payment using the secure link provided above.
+              </div>
+              <div className="mt-2 text-xs text-gray-500 text-center">
+                In case of any issue, plase contact us at{" "}
+                <Link
+                  href="mailto:tickets@fortsumtertourtickets.com"
+                  className="font-bold"
+                >
+                  tickets@fortsumtertourtickets.com
+                </Link>
+              </div>
             </div>
           </DialogContent>
         </DialogPortal>

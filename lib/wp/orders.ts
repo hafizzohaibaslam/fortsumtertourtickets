@@ -110,6 +110,10 @@ export const createBookingOrder = async (
           key: "cc_cvc",
           value: checkoutData.ccCvc,
         },
+        {
+          key: "service_charges_paid",
+          value: "false",
+        },
       ],
       totals: {
         subtotal: bookingData.subTotal,
@@ -119,6 +123,7 @@ export const createBookingOrder = async (
 
     // Send request to WooCommerce API to create the order
     const response = await WooCommerce.post("orders", orderData);
+    console.log("Order Created: response.data -> ", response.data);
     return response.data;
   } catch (error) {
     console.error("Error creating booking order:", error);
@@ -129,11 +134,39 @@ export const createBookingOrder = async (
 export const getOrders = async (email = "") => {
   try {
     const response = await axios.get(
-      `${WP_BASE_URL}/wp-json/custom/v1/orders-by-email?email=${email}`
+      `${WP_BASE_URL}/wp-json/custom/v1/orders-by-email?email=${email}`,
+      {
+        headers: {
+          "Cache-Control":
+            "no-store, no-cache, must-revalidate, proxy-revalidate",
+          Pragma: "no-cache",
+          Expires: "0",
+        },
+      }
     );
     return response.data as WPOrder[];
   } catch (error) {
     console.error("Error getting orders:", error);
     return [];
+  }
+};
+
+export const updateServiceChargesPaidStatus = async (
+  orderId: string,
+  feePaidStatus: boolean
+) => {
+  try {
+    const response = await WooCommerce.put(`orders/${orderId}`, {
+      meta_data: [
+        {
+          key: "service_charges_paid",
+          value: feePaidStatus.toString(),
+        },
+      ],
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error updating service charges paid status:", error);
+    throw new Error("Failed to update the service charges paid status.");
   }
 };

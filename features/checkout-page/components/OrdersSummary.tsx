@@ -21,7 +21,7 @@ const OrdersSummary = ({
     checkoutData,
     setTourData,
     setCheckoutData,
-    setThankYouModalPersonCount,
+    setThankYouModalOrder,
   } = useBooking();
   const { isFormValid, validationErrors } = useValidation();
   const [isLoading, setIsLoading] = useState(false);
@@ -48,14 +48,10 @@ const OrdersSummary = ({
     setIsLoading(true);
     const toastId = toast.loading("Placing order...");
     try {
-      await createBookingOrder(tourData, checkoutData);
+      const order = await createBookingOrder(tourData, checkoutData);
       setCanRedirect(false);
       router.push(ROUTES.ORDER_LIST + `?email=${checkoutData.email}`);
-      const totalPersons = Object.values(tourData.persons).reduce(
-        (acc, curr) => acc + curr,
-        0
-      );
-      setThankYouModalPersonCount(totalPersons);
+      setThankYouModalOrder(order);
       setTourData(null);
       setCheckoutData(null);
       toast.success("Order placed successfully", { id: toastId });
