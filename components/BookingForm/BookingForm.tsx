@@ -65,8 +65,9 @@ function BookingForm({ onClose }: { onClose: () => void }) {
   const { setTourData } = useBooking();
 
   const [data, setData] = useState<BookingFormData>({
-    date: new Date(),
-    month: new Date(),
+    // Default to Oct 1, 2025 (local time to avoid TZ shifts)
+    date: new Date(2025, 9, 1),
+    month: new Date(2025, 9, 1),
     time: "",
     persons: {},
   });
@@ -273,28 +274,31 @@ function BookingForm({ onClose }: { onClose: () => void }) {
 
 export default BookingForm;
 
+// Helper to parse YYYY-MM-DD in local time (avoids UTC shifting issues)
+const parseLocalYMD = (s: string) => {
+  const [y, m, d] = s.split("-").map(Number);
+  return new Date(y, (m || 1) - 1, d || 1);
+};
+
 const filterDate = (date: Date) => {
-  //today and future dates until end of 2025, but skip the dates in datesToSkip
-  const today = new Date();
+  // Allow only dates from Oct 1, 2025 through Dec 31, 2025, excluding skipped dates
+  const normalize = (d: Date) =>
+    new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  const d = normalize(date);
+  const minDate = new Date(2025, 9, 1); // Oct 1, 2025
+  const maxDate = new Date(2025, 11, 31); // Dec 31, 2025
   const isSkipped = datesToSkip
-    .map((date) => new Date(date))
-    .some((d) => d.toDateString() === date.toDateString());
-  const todayWithZeroTime = new Date(today.setHours(0, 0, 0, 0));
-  const endOf2025 = new Date("2025-12-31");
-  if (date < todayWithZeroTime || date > endOf2025 || isSkipped) return false;
-  return true;
+    .map((s) => parseLocalYMD(s))
+    .some((skip) => normalize(skip).getTime() === d.getTime());
+  return d >= minDate && d <= maxDate && !isSkipped;
 };
 
 const isMonthAvailable = (date: Date) => {
-  //check if the month is past month or from next year, then return false
-  const today = new Date();
-  const todayWithZeroTime = new Date(today.setHours(0, 0, 0, 0));
+  // Only Oct–Dec 2025 are available months
   const month = date.getMonth();
   const year = date.getFullYear();
-  if (
-    month < todayWithZeroTime.getMonth() ||
-    year > todayWithZeroTime.getFullYear() + 1
-  )
-    return false;
+  if (year !== 2025) return false;
+  if (month < 9) return false; // before October
+  if (month > 11) return false; // beyond December
   return true;
 };
