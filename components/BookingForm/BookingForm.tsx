@@ -66,8 +66,8 @@ function BookingForm({ onClose }: { onClose: () => void }) {
 
   const [data, setData] = useState<BookingFormData>({
     // Default to Oct 7, 2025 (local time to avoid TZ shifts)
-    date: new Date(2025, 9, 7),
-    month: new Date(2025, 9, 7),
+    date: new Date(2025, 9, 8),
+    month: new Date(2025, 9, 8),
     time: "",
     persons: {},
   });
@@ -285,7 +285,7 @@ const filterDate = (date: Date) => {
   const normalize = (d: Date) =>
     new Date(d.getFullYear(), d.getMonth(), d.getDate());
   const d = normalize(date);
-  const minDate = new Date(2025, 9, 7); // Oct 1, 2025
+  const minDate = new Date(2025, 9, 8); // Oct 1, 2025
   const maxDate = new Date(2025, 11, 31); // Dec 31, 2025
   const isSkipped = datesToSkip
     .map((s) => parseLocalYMD(s))
