@@ -64,12 +64,15 @@ const datesToSkip = ["2025-11-27", "2025-12-25"];
 function BookingForm({ onClose }: { onClose: () => void }) {
   const { setTourData } = useBooking();
 
-  const [data, setData] = useState<BookingFormData>({
-    // Default to Oct 7, 2025 (local time to avoid TZ shifts)
-    date: new Date(2025, 9, 8),
-    month: new Date(2025, 9, 8),
-    time: "",
-    persons: {},
+  const [data, setData] = useState<BookingFormData>(() => {
+    const today = new Date();
+    const firstEnabled = getFirstEnabledDateAtOrAfter(today);
+    return {
+      date: firstEnabled,
+      month: new Date(today.getFullYear(), today.getMonth(), 1),
+      time: "",
+      persons: {},
+    };
   });
 
   const { tourType, setTourType } = useGlobalContext();
@@ -177,10 +180,17 @@ function BookingForm({ onClose }: { onClose: () => void }) {
               onMonthChange={(date) => {
                 const firstOfMonth = new Date(date);
                 firstOfMonth.setDate(1);
+                const today = new Date();
+                const baseStart =
+                  firstOfMonth.getFullYear() === today.getFullYear() &&
+                  firstOfMonth.getMonth() === today.getMonth()
+                    ? today
+                    : firstOfMonth;
+                const nextDate = getFirstEnabledDateAtOrAfter(baseStart);
                 setData({
                   ...data,
                   month: firstOfMonth,
-                  date: firstOfMonth,
+                  date: nextDate,
                 });
               }}
               loading={false}
@@ -280,25 +290,44 @@ const parseLocalYMD = (s: string) => {
   return new Date(y, (m || 1) - 1, d || 1);
 };
 
+// Normalize to local midnight
+const normalizeDate = (d: Date) =>
+  new Date(d.getFullYear(), d.getMonth(), d.getDate());
+
+// Find the first enabled date on/after a given start, up to Dec 31, 2025
+const getFirstEnabledDateAtOrAfter = (start: Date) => {
+  const maxDate = new Date(2025, 11, 31);
+  let d = normalizeDate(start);
+  while (d <= maxDate) {
+    const isSkipped = datesToSkip
+      .map((s) => parseLocalYMD(s))
+      .some((skip) => normalizeDate(skip).getTime() === d.getTime());
+    if (!isSkipped && d >= normalizeDate(new Date())) {
+      return d;
+    }
+    d = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1);
+  }
+  return maxDate; // fallback
+};
+
 const filterDate = (date: Date) => {
-  // Allow only dates from Oct 1, 2025 through Dec 31, 2025, excluding skipped dates
-  const normalize = (d: Date) =>
-    new Date(d.getFullYear(), d.getMonth(), d.getDate());
-  const d = normalize(date);
-  const minDate = new Date(2025, 9, 8); // Oct 1, 2025
+  // Allow dates from TODAY through Dec 31, 2025, excluding skipped dates
+  const d = normalizeDate(date);
+  const today = normalizeDate(new Date());
   const maxDate = new Date(2025, 11, 31); // Dec 31, 2025
   const isSkipped = datesToSkip
     .map((s) => parseLocalYMD(s))
-    .some((skip) => normalize(skip).getTime() === d.getTime());
-  return d >= minDate && d <= maxDate && !isSkipped;
+    .some((skip) => normalizeDate(skip).getTime() === d.getTime());
+  return d >= today && d <= maxDate && !isSkipped;
 };
 
 const isMonthAvailable = (date: Date) => {
-  // Only Oct–Dec 2025 are available months
+  // Only months from current month through Dec 2025 are available
+  const today = new Date();
   const month = date.getMonth();
   const year = date.getFullYear();
   if (year !== 2025) return false;
-  if (month < 9) return false; // before October
+  if (month < today.getMonth()) return false; // past months
   if (month > 11) return false; // beyond December
   return true;
 };
