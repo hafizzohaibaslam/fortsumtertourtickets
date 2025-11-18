@@ -35,16 +35,16 @@ const OrdersPageContent = () => {
           : latest;
       });
 
-      // ✅ Count total tickets from that order
-      const ticketCount = latestOrder.line_items.reduce((sum, item) => {
-        return sum + (item.quantity || 0);
-      }, 0);
+      // // ✅ Count total tickets from that order
+      // const ticketCount = latestOrder.line_items.reduce((sum, item) => {
+      //   return sum + (item.quantity || 0);
+      // }, 0);
 
-      // ✅ Calculate value (tickets * 6.97)
-      const tagValue = ticketCount * 6.97;
+      // // ✅ Calculate value (tickets * 6.97)
+      // const tagValue = ticketCount * 6.97;
 
-      // ✅ Fire Google Ads purchase conversion
-      reportPurchase(tagValue, "USD");
+      // // ✅ Fire Google Ads purchase conversion
+      // reportPurchase(tagValue, "USD");
 
       setOrders(orders);
       setIsLoading(false);
