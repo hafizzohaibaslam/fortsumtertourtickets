@@ -4,9 +4,8 @@ import { SERVICE_FEE } from "../constants";
 import { CheckoutData, TourData } from "../types";
 import WooCommerce from "../WC";
 import { WPOrder } from "./types";
-import WP, { WP_BASE_URL } from "../API";
+import { WP_BASE_URL } from "../API";
 import axios from "axios";
-import { reportPurchase } from "../gtag";
 
 const PRODUCT_ID_TO_ORDER = 76;
 
@@ -125,17 +124,6 @@ export const createBookingOrder = async (
     // Send request to WooCommerce API to create the order
     const response = await WooCommerce.post("orders", orderData);
     console.log("Order Created: response.data -> ", response.data);
-
-    // ✅ Count total tickets from that order
-    const ticketCount = orderData.line_items.reduce((sum, item) => {
-      return sum + (item.quantity || 0);
-    }, 0);
-
-    // ✅ Calculate value (tickets * 6.97)
-    const tagValue = ticketCount * 6.97;
-
-    // ✅ Fire Google Ads purchase conversion
-    reportPurchase(tagValue, "USD");
 
     return response.data;
   } catch (error) {

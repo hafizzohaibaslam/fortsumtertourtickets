@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { ROUTES } from "@/features/shared/utils/routes";
 import Link from "next/link";
 import { useValidation } from "@/providers/validation-provider";
+import { reportPurchase } from "@/lib/gtag";
 
 const OrdersSummary = ({
   setCanRedirect,
@@ -49,6 +50,19 @@ const OrdersSummary = ({
     const toastId = toast.loading("Placing order...");
     try {
       const order = await createBookingOrder(tourData, checkoutData);
+
+      // ✅ Count total tickets from that order
+      const ticketCount = Object.values(tourData?.persons || {}).reduce(
+        (acc, curr) => acc + curr,
+        0
+      );
+
+      // ✅ Calculate value (tickets * 6.97)
+      const tagValue = ticketCount * SERVICE_FEE;
+
+      // ✅ Fire Google Ads purchase conversion
+      reportPurchase(tagValue, "USD");
+
       setCanRedirect(false);
       router.push(ROUTES.ORDER_LIST + `?email=${checkoutData.email}`);
       setThankYouModalOrder(order);

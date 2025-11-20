@@ -29,11 +29,11 @@ const OrdersPageContent = () => {
       }
 
       // ✅ Find the latest order by date_created
-      const latestOrder = orders.reduce((latest, current) => {
-        return new Date(current.date_created) > new Date(latest.date_created)
-          ? current
-          : latest;
-      });
+      // const latestOrder = orders.reduce((latest, current) => {
+      //   return new Date(current.date_created) > new Date(latest.date_created)
+      //     ? current
+      //     : latest;
+      // });
 
       // // ✅ Count total tickets from that order
       // const ticketCount = latestOrder.line_items.reduce((sum, item) => {
