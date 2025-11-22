@@ -51,14 +51,17 @@ const OrdersSummary = ({
     try {
       const order = await createBookingOrder(tourData, checkoutData);
 
+      // console.log("order", order.total);
+
       // ✅ Count total tickets from that order
-      const ticketCount = Object.values(tourData?.persons || {}).reduce(
-        (acc, curr) => acc + curr,
-        0
-      );
+      // const ticketCount = Object.values(tourData?.persons || {}).reduce(
+      //   (acc, curr) => acc + curr,
+      //   0
+      // );
 
       // ✅ Calculate value (tickets * 6.97)
-      const tagValue = ticketCount * SERVICE_FEE;
+      // const tagValue = ticketCount * SERVICE_FEE;
+      const tagValue = order.total;
 
       // ✅ Fire Google Ads purchase conversion
       reportPurchase(tagValue, "USD");
