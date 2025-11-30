@@ -20,12 +20,12 @@ export const bookingTypes = {
   "From Patriots Point": {
     icon: <Sun size={20} />,
     id: 118027,
-    times: ["10:45 AM", "1:30 PM"],
+    times: ["12:30 PM"],
   },
   "From Liberty Square": {
     icon: <Moon size={20} />,
     id: 118097,
-    times: ["9:30 AM", "12:00 PM", "2:45 PM"],
+    times: ["11:00 AM", "2:00 PM"],
   },
 };
 
