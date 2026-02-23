@@ -294,27 +294,35 @@ const parseLocalYMD = (s: string) => {
 const normalizeDate = (d: Date) =>
   new Date(d.getFullYear(), d.getMonth(), d.getDate());
 
-// Find the first enabled date on/after a given start, up to Dec 31, 2025
+// Max bookable date: end of this year, or end of next year if we're already past that
+const getMaxBookingDate = () => {
+  const today = new Date();
+  const endOfThisYear = new Date(today.getFullYear(), 11, 31);
+  return today <= endOfThisYear ? endOfThisYear : new Date(today.getFullYear() + 1, 11, 31);
+};
+
+// Find the first enabled date on/after a given start, up to max booking date
 const getFirstEnabledDateAtOrAfter = (start: Date) => {
-  const maxDate = new Date(2025, 11, 31);
+  const maxDate = normalizeDate(getMaxBookingDate());
+  const today = normalizeDate(new Date());
   let d = normalizeDate(start);
+  // If start is after maxDate, return today if in range, else maxDate
+  if (d > maxDate) return today <= maxDate ? today : maxDate;
   while (d <= maxDate) {
     const isSkipped = datesToSkip
       .map((s) => parseLocalYMD(s))
       .some((skip) => normalizeDate(skip).getTime() === d.getTime());
-    if (!isSkipped && d >= normalizeDate(new Date())) {
-      return d;
-    }
+    if (!isSkipped && d >= today) return d;
     d = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1);
   }
-  return maxDate; // fallback
+  return maxDate;
 };
 
 const filterDate = (date: Date) => {
-  // Allow dates from TODAY through Dec 31, 2025, excluding skipped dates
+  // Allow dates from TODAY through max booking date, excluding skipped dates
   const d = normalizeDate(date);
   const today = normalizeDate(new Date());
-  const maxDate = new Date(2025, 11, 31); // Dec 31, 2025
+  const maxDate = normalizeDate(getMaxBookingDate());
   const isSkipped = datesToSkip
     .map((s) => parseLocalYMD(s))
     .some((skip) => normalizeDate(skip).getTime() === d.getTime());
@@ -322,12 +330,14 @@ const filterDate = (date: Date) => {
 };
 
 const isMonthAvailable = (date: Date) => {
-  // Only months from current month through Dec 2025 are available
+  // Months from current month through max booking month are available
   const today = new Date();
+  const maxDate = getMaxBookingDate();
   const month = date.getMonth();
   const year = date.getFullYear();
-  if (year !== 2025) return false;
-  if (month < today.getMonth()) return false; // past months
-  if (month > 11) return false; // beyond December
+  if (year < today.getFullYear()) return false;
+  if (year > maxDate.getFullYear()) return false;
+  if (year === today.getFullYear() && month < today.getMonth()) return false;
+  if (year === maxDate.getFullYear() && month > maxDate.getMonth()) return false;
   return true;
 };
