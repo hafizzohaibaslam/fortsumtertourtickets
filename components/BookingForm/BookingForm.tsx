@@ -20,12 +20,12 @@ export const bookingTypes = {
   "From Patriots Point": {
     icon: <Sun size={20} />,
     id: 118027,
-    times: ["12:30 PM"],
+    times: ["10:30 AM", "01:30 PM"],
   },
   "From Liberty Square": {
     icon: <Moon size={20} />,
     id: 118097,
-    times: ["11:00 AM", "2:00 PM"],
+    times: ["09:30 AM", "12:00 PM", "2:45 PM"],
   },
 };
 
@@ -298,7 +298,9 @@ const normalizeDate = (d: Date) =>
 const getMaxBookingDate = () => {
   const today = new Date();
   const endOfThisYear = new Date(today.getFullYear(), 11, 31);
-  return today <= endOfThisYear ? endOfThisYear : new Date(today.getFullYear() + 1, 11, 31);
+  return today <= endOfThisYear
+    ? endOfThisYear
+    : new Date(today.getFullYear() + 1, 11, 31);
 };
 
 // Find the first enabled date on/after a given start, up to max booking date
@@ -338,6 +340,7 @@ const isMonthAvailable = (date: Date) => {
   if (year < today.getFullYear()) return false;
   if (year > maxDate.getFullYear()) return false;
   if (year === today.getFullYear() && month < today.getMonth()) return false;
-  if (year === maxDate.getFullYear() && month > maxDate.getMonth()) return false;
+  if (year === maxDate.getFullYear() && month > maxDate.getMonth())
+    return false;
   return true;
 };
