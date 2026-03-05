@@ -3,7 +3,7 @@ import WhatCustomersSay from "@/features/shared/components/WhatCustomersSay";
 import AskedQuestions from "@/features/shared/components/AskedQuestions";
 import FortSummerExperience from "@/features/shared/components/FortSummerExperience";
 import HeroSection from "@/features/details-page/components/HeroSection";
-import { alcatrazNightTourAccordianData } from "@/lib/accordianData";
+import { libertySquareFaqData } from "@/lib/accordianData";
 import { Metadata } from "next";
 import NightTourDetails from "@/features/details-page/components/NightTourDetail";
 import WhyChooseUs from "@/features/landing-page/components/WhyChooseUs";
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true }, // ✅ explicit
 };
 
-const AlcatrazNightTour = () => {
+const LibertySquareTour = () => {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -134,32 +134,14 @@ const AlcatrazNightTour = () => {
       {
         "@type": "FAQPage",
         "@id": "https://fortsumtertourtickets.com/liberty-square#faqs",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "How long is the Fort Sumter boat tour?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "About 2 hours and 15 minutes total, including the ferry ride to and from the fort plus roughly one hour on site.",
-            },
+        mainEntity: libertySquareFaqData.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
           },
-          {
-            "@type": "Question",
-            name: "Are Fort Sumter tours family-friendly?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. The ferry ride and fort exploration suit all ages. Many families also visit nearby attractions like the South Carolina Aquarium.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Which departure is better: Patriots Point or Liberty Square?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Both reach the same fort and include similar on-site experiences. Liberty Square is ideal for downtown Charleston stays; Patriots Point is convenient for Mount Pleasant or pairing with the naval museum.",
-            },
-          },
-        ],
+        })),
       },
       {
         "@type": "BreadcrumbList",
@@ -187,8 +169,8 @@ const AlcatrazNightTour = () => {
       <NightTourDetails />
       <PreparationTips tour={"liberty"} />
       <WhyChooseUs />
-      {/* <WhatCustomersSay /> */}
-      <AskedQuestions data={alcatrazNightTourAccordianData} />
+      <WhatCustomersSay />
+      <AskedQuestions data={libertySquareFaqData} />
       <FortSummerExperience />
 
       {/* ✅ Combined TouristTrip + FAQPage Schema */}
@@ -200,4 +182,4 @@ const AlcatrazNightTour = () => {
   );
 };
 
-export default AlcatrazNightTour;
+export default LibertySquareTour;

@@ -29,10 +29,11 @@ const BlogCard = ({ featured, className, post }: BlogCardProps) => {
       >
         <Image
           src={
-            getImgUrl(post.featured_media ?? 0) ||
-            "/images/blog-placeholder.png"
+            post.featured_media
+              ? getImgUrl(post.featured_media)
+              : "/images/blog-placeholder.png"
           }
-          alt="blog-image"
+          alt={post.title.rendered || "Fort Sumter blog article"}
           width={100}
           height={100}
           className="w-full h-full object-cover"
@@ -53,14 +54,14 @@ const BlogCard = ({ featured, className, post }: BlogCardProps) => {
           </span>
         </div>
         <div className="mt-[20px] space-y-[12px]">
-          <h1
+          <h2
             className={cn(
               "font-nohemi font-medium text-[20px] leading-[30px] text-[#25283E]",
               !featured && "max-w-[90%]"
             )}
           >
             {post.title.rendered}
-          </h1>
+          </h2>
           <p
             className={cn(
               "font-plusJakarta font-normal text-[14px] leading-[24px] text-[#25283E]",

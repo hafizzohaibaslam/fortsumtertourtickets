@@ -38,7 +38,6 @@ export const servicesSectionData: ServicesSectionCardData[] = [
         Icon: AlarmClock,
         label: TOUR_DETAILS.dayTour.departureTime,
       },
-      //location
       {
         Icon: MapPin,
         label: "40 Patriots Point Rd, Mt. Pleasant, SC 29464",
@@ -60,20 +59,9 @@ export const servicesSectionData: ServicesSectionCardData[] = [
         label: "~1 hr exploring fort, museum, visitor centre exhibits",
         iconClassName: "",
       },
-
-      // {
-      //   Icon: X,
-      //   label: "No access to special areas",
-      //   iconClassName: "bg-[#FF383C]",
-      // },
-      // {
-      //   Icon: X,
-      //   label: "No access to evening programs",
-      //   iconClassName: "bg-[#FF383C]",
-      // },
       {
         Icon: Check,
-        label: "Access to America’s National Parks Store on site",
+        label: "Access to America's National Parks Store on site",
         iconClassName: "bg-[#25283E]",
       },
       {
@@ -156,7 +144,7 @@ export const customersCardData = [
     customerJob: "Travel Blogger",
     customerImage: "/landing-page/customer1.png",
     description:
-      "I didn’t expect to love it this much. Walking through the old prison blocks with real voices in your ears felt surreal. The stories felt so real.",
+      "Standing where the first shots of the Civil War were fired gave me chills. The ranger talk brought history to life, and the ferry ride across Charleston Harbor was stunning. A must-do tour in Charleston!",
   },
   {
     id: "2",
@@ -164,15 +152,15 @@ export const customersCardData = [
     customerJob: "Parent & Explorer",
     customerImage: "/landing-page/customer2.png",
     description:
-      "Did the Fort Sumter tour with my family, even the kids were hooked. The audio tour was wild — hearing real prisoner stories was insane. Plus, those views of San Francisco? unexplainable…",
+      "Did the Fort Sumter tour with my family and even the kids were hooked. The ranger program was engaging for all ages, and the harbor views of the Ravenel Bridge were breathtaking. Highly recommend the Patriots Point departure!",
   },
   {
     id: "3",
     customerName: "Chris Martin",
-    customerJob: "Backpacker",
+    customerJob: "History Enthusiast",
     customerImage: "/landing-page/customer3.png",
     description:
-      "Honestly, one of the few tourist traps across the world worth visiting. 100%, the audio tour is really cool, like seriously great… best view of the city and bridge.",
+      "One of the best historical tours I have ever taken. The ferry ride sets the tone perfectly, and walking through Fort Sumter with the exhibits and ranger commentary made the Civil War feel real. Best views of Charleston Harbor too.",
   },
   {
     id: "4",
@@ -180,7 +168,7 @@ export const customersCardData = [
     customerJob: "College Student",
     customerImage: "/landing-page/customer4.png",
     description:
-      "Booked the Fort Sumter day tour with my friends and it was crazy good. The ferry ride was smooth, the views were lit awesome, and walking inside the old prison gave me actual chills. Totally worth it!",
+      "Booked the Fort Sumter tour from Liberty Square and it was incredible. The ferry ride was smooth, the harbor views were amazing, and exploring the fort's museum exhibits was super interesting. Totally worth every penny!",
   },
 ];
 

@@ -28,13 +28,13 @@ const Highlights = () => {
             Why Visit Fort Sumter?
           </h2>
           <p className="text-[#25283EB2] font-normal font-plus-jakarta-sans md:text-[16px] text-[14px] leading-[26px] max-w-2xl">
-            So, Fort Sumter, yeah! That's the place where the whole Civil War
-            was fought in 1861. At the entrance of Charleston Harbor, it is one
-            of the most visited places. A Fort Sumter tour gives you the best
-            chance to walk through the grounds where history changed the course
-            of America. You get this ferry ride across the harbor (which, by the
-            way, is pretty cool), then a walk through the fort itself.
-            Absolutely memorable tour!
+            Fort Sumter, located at the entrance of Charleston Harbor, is where
+            the first shots of the Civil War were fired on April 12, 1861. Today
+            it stands as one of South Carolina&apos;s most iconic National
+            Historical Parks. A Fort Sumter tour includes a scenic ferry ride
+            across the harbor, a ranger-led history presentation, and time to
+            explore the fort&apos;s grounds, museum exhibits, and historic
+            fortifications on your own.
           </p>
         </div>
         <div className="lg:self-end w-fit">

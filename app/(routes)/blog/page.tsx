@@ -2,11 +2,25 @@ import BlogCard from "@/features/blog-page/components/BlogCard";
 import BlogList from "@/features/blog-page/components/BlogList";
 import LatestBlog from "@/features/blog-page/components/LatestBlog";
 import { fetchPosts } from "@/lib/wp/posts";
+import { Metadata } from "next";
 import React from "react";
 
-export const metadata = {
-  title: "Blog",
-  description: "Read the latest news and updates from Fort Sumter Tours.",
+export const metadata: Metadata = {
+  title: "Fort Sumter History & Charleston Harbor Blog",
+  description:
+    "Explore the history of Fort Sumter, the Civil War in Charleston, and tips for planning your Fort Sumter tour. Read articles about Charleston Harbor and South Carolina history.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    url: "https://fortsumtertourtickets.com/blog",
+    title: "Fort Sumter History & Charleston Harbor Blog",
+    description:
+      "Explore the history of Fort Sumter, the Civil War in Charleston, and tips for planning your Fort Sumter tour.",
+  },
+  twitter: {
+    title: "Fort Sumter History & Charleston Harbor Blog",
+    description:
+      "Explore the history of Fort Sumter, the Civil War in Charleston, and tips for planning your Fort Sumter tour.",
+  },
 };
 
 const BlogPage = async () => {

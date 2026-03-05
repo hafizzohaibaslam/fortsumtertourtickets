@@ -11,11 +11,12 @@ const HighlightsMoreContent = ({ showAll }: HighlightsMoreContentProps) => {
       className={cn(
         "overflow-hidden transition-all duration-700 ease-in-out",
         showAll
-          ? "max-h-[3000px] opacity-100 transform translate-y-0"
-          : "max-h-0 opacity-0 mt-0 transform -translate-y-4"
+          ? "max-h-[5000px]"
+          : "max-h-0"
       )}
+      aria-hidden={!showAll}
     >
-      <div className="rounded-[23px] animate-in slide-in-from-top-4 duration-700 ">
+      <div className="rounded-[23px]">
         {/* Content Sections */}
         <div className="flex flex-col gap-[30px]">
           {/* Section 1 */}

@@ -11,7 +11,7 @@ const Footer = () => {
       <div>
         <Image
           src={Logo}
-          alt="logo"
+          alt="Fort Sumter Tour Tickets - Book Ferry Tours in Charleston, SC"
           width={100}
           height={100}
           className="w-[113px] h-[50px]"
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-[12px] lg:flex-row lg:justify-between">
           <p className="font-plus-jakarta-sans font-normal text-[12px] leading-[22px] text-[#8F9FA3] flex-1 lg:self-end">
-            © 2021 — Copyright, All Rights reserved
+            © 2026 Fort Sumter Tour Tickets — All Rights Reserved
           </p>
 
           {/* <div className="flex flex-col gap-[15px]">

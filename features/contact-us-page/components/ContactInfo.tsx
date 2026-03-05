@@ -9,9 +9,9 @@ const ContactInfo = () => {
         <span className="font-plus-jakarta-sans font-normal text-[24px] leading-[36px] text-black">
           Contact Info
         </span>
-        <h1 className="text-black font-nohemi font-medium text-[48px] leading-[58px]">
+        <h2 className="text-black font-nohemi font-medium text-[48px] leading-[58px]">
           We are always happy to assist you.
-        </h1>
+        </h2>
       </div>
       {/* Right */}
       <div className="flex flex-col gap-[24px] lg:flex-row lg:items-center lg:justify-between lg:gap-[40px]">
@@ -25,7 +25,7 @@ const ContactInfo = () => {
           </div>
           <div className="space-y-[25px]">
             <a
-              href="mailto:ticketsfortsumtertourtickets.com"
+              href="mailto:tickets@fortsumtertourtickets.com"
               className="font-nohemi font-medium text-[22px]"
             >
               tickets@fortsumtertourtickets.com

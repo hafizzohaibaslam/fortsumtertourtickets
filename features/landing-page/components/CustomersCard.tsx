@@ -37,7 +37,7 @@ const CustomersCard = ({
         <div className="relative rounded-full overflow-hidden w-[60px] h-[60px] bg-[#e6e4ff]">
           <Image
             src={customerImage}
-            alt="customer-1"
+            alt={`${customerName} - Fort Sumter tour review`}
             width={100}
             height={100}
             className="w-full h-full object-cover object-center"

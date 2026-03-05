@@ -4,9 +4,9 @@ import React from "react";
 const WhyChooseUs = () => {
   return (
     <div className="space-y-[42px]">
-      <h1 className="text-[#25283E] font-nohemi font-medium md:text-[36px] text-[26px] leading-[42px] lg:text-[48px] lg:leading-[54px] -tracking-[1%]">
+      <h2 className="text-[#25283E] font-nohemi font-medium md:text-[36px] text-[26px] leading-[42px] lg:text-[48px] lg:leading-[54px] -tracking-[1%]">
         Why Choose Us
-      </h1>
+      </h2>
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-[75px]">
         <div className="space-y-[17px]">
           {whyChooseUsData.map((item) => (

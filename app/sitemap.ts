@@ -1,4 +1,3 @@
-// app/sitemap.ts
 import type { MetadataRoute } from "next";
 import { fetchPosts } from "@/lib/wp/posts";
 
@@ -6,13 +5,48 @@ const SITE = "https://fortsumtertourtickets.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const pages: MetadataRoute.Sitemap = [
-    { url: `${SITE}/`, lastModified: new Date() },
-    { url: `${SITE}/patriots-point`, lastModified: new Date() },
-    { url: `${SITE}/liberty-square`, lastModified: new Date() },
-    { url: `${SITE}/blog`, lastModified: new Date() },
-    { url: `${SITE}/contact-us`, lastModified: new Date() },
-    { url: `${SITE}/privacy-policy`, lastModified: new Date() },
-    { url: `${SITE}/terms-and-conditions`, lastModified: new Date() },
+    {
+      url: `${SITE}/`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1.0,
+    },
+    {
+      url: `${SITE}/patriots-point`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE}/liberty-square`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE}/contact-us`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${SITE}/privacy-policy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${SITE}/terms-and-conditions`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 
   try {
@@ -22,15 +56,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       pages.push({
         url: `${SITE}/blog/${post.slug}`,
         lastModified: new Date(post.date),
+        changeFrequency: "monthly",
+        priority: 0.7,
       });
     }
   } catch {
-    // ignore – still return the static pages
+    // still return the static pages
   }
 
   return pages;
 }
 
-// keep it fresh if your blog updates frequently
 export const dynamic = "force-dynamic";
 export const revalidate = 0;

@@ -1,6 +1,7 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Fort Sumter Tour Tickets",
+  "short_name": "Fort Sumter",
+  "description": "Book Fort Sumter tours and ferry tickets in Charleston, SC. Includes ferry ride, fort entry, ranger talks, and harbor views.",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -17,5 +18,7 @@
   ],
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
 }

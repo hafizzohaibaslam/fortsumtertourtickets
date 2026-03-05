@@ -5,7 +5,7 @@ import FortSummerExperience from "@/features/shared/components/FortSummerExperie
 import HeroSection from "@/features/details-page/components/HeroSection";
 import TourDetails from "@/features/details-page/components/TourDetails";
 import WhyChooseUs from "@/features/landing-page/components/WhyChooseUs";
-import { alcatrazDayTourAccordianData } from "@/lib/accordianData";
+import { patriotsPointFaqData } from "@/lib/accordianData";
 import { Metadata } from "next";
 import PreparationTips from "@/features/landing-page/components/PreparationTips";
 
@@ -13,9 +13,22 @@ export const metadata: Metadata = {
   title: "Fort Sumter Tours from Patriots Point | Ferry Tickets",
   description:
     "Book your Fort Sumter tours & enjoy a ferry tour across Charleston Harbor to the Fort, where the Civil War began. Book your Fort Sumter ticket in 60 sec.",
+  alternates: { canonical: "/patriots-point" },
+  openGraph: {
+    url: "https://fortsumtertourtickets.com/patriots-point",
+    title: "Fort Sumter Tours from Patriots Point | Ferry Tickets",
+    description:
+      "Book your Fort Sumter tours & enjoy a ferry tour across Charleston Harbor to the Fort, where the Civil War began. Book your Fort Sumter ticket in 60 sec.",
+  },
+  twitter: {
+    title: "Fort Sumter Tours from Patriots Point | Ferry Tickets",
+    description:
+      "Book your Fort Sumter tours & enjoy a ferry tour across Charleston Harbor to the Fort, where the Civil War began. Book your Fort Sumter ticket in 60 sec.",
+  },
+  robots: { index: true, follow: true },
 };
 
-const AlcatrazDayTour = () => {
+const PatriotsPointTour = () => {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -114,32 +127,14 @@ const AlcatrazDayTour = () => {
       {
         "@type": "FAQPage",
         "@id": "https://fortsumtertourtickets.com/patriots-point#faqs",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "How long is the Fort Sumter boat tour?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "About 2 hours and 15 minutes total, including the ferry ride to and from the fort plus roughly one hour on site.",
-            },
+        mainEntity: patriotsPointFaqData.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
           },
-          {
-            "@type": "Question",
-            name: "Are Fort Sumter tours family-friendly?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. The ferry ride and fort exploration suit all ages. Many families also visit the nearby Patriots Point Naval & Maritime Museum.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Which departure is better: Patriots Point or Liberty Square?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Both reach the same fort and include similar on-site experiences. Patriots Point is convenient for Mount Pleasant visitors or those pairing the trip with the naval museum; Liberty Square is better for downtown stays.",
-            },
-          },
-        ],
+        })),
       },
       {
         "@type": "BreadcrumbList",
@@ -168,8 +163,8 @@ const AlcatrazDayTour = () => {
       <PreparationTips tour="" />
 
       <WhyChooseUs />
-      {/* <WhatCustomersSay /> */}
-      <AskedQuestions data={alcatrazDayTourAccordianData} />
+      <WhatCustomersSay />
+      <AskedQuestions data={patriotsPointFaqData} />
       <FortSummerExperience />
 
       {/* ✅ Combined TouristTrip + FAQPage Schema */}
@@ -181,4 +176,4 @@ const AlcatrazDayTour = () => {
   );
 };
 
-export default AlcatrazDayTour;
+export default PatriotsPointTour;

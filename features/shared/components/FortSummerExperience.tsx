@@ -15,9 +15,9 @@ const FortSummerExperience = () => {
         alt="Fort Sumter tours Charleston SC with views of cannons and harbor"
         fill
       />
-      <h1 className="max-w-5xl mx-auto text-center font-nohemi font-normal text-white text-[30px] leading-[1.2] lg:text-[64px] lg:leading-[74px]">
+      <h2 className="max-w-5xl mx-auto text-center font-nohemi font-normal text-white text-[30px] leading-[1.2] lg:text-[64px] lg:leading-[74px]">
         Our Unforgettable Fort Sumter Tours Experience
-      </h1>
+      </h2>
       <p className="max-w-4xl mx-auto text-center text-white font-plus-jakarta-sans font-normal md:text-[16px] text-[14px] leading-[1.4] mt-[19px] mb-[60px] backdrop-blur-md p-2 rounded-md lg:p-0 lg:rounded-none lg:backdrop-blur-none">
         *Take a ferry ride to Fort Sumter and just see where American history
         changed forever. This is where the very first shots of the Civil War

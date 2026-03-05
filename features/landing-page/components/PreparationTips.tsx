@@ -4,9 +4,11 @@ import React from "react";
 const PreparationTips = ({ tour }: { tour: string }) => {
   return (
     <div className="flex flex-col gap-[40px] md:mt-[40px]  md:mb-[100px] mb-[40px] py-[32px] lg:px-[51px]">
-      <h1 className="text-[#25283E] font-nohemi font-medium md:text-[36px] text-[26px]  leading-[42px] lg:text-[40px] lg:leading-[54px] -tracking-[1%]">
-        Why Choose Fort Sumter Tours from Patriots Point?
-      </h1>
+      <h2 className="text-[#25283E] font-nohemi font-medium md:text-[36px] text-[26px]  leading-[42px] lg:text-[40px] lg:leading-[54px] -tracking-[1%]">
+        {tour === "liberty"
+          ? "Why Choose Fort Sumter Tours from Liberty Square?"
+          : "Why Choose Fort Sumter Tours from Patriots Point?"}
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px]">
         {tour === "liberty"
           ? preparationTipsData1.map((item) => (

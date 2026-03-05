@@ -15,7 +15,7 @@ const Header = () => {
     isMobileMenuOpen,
   } = useGlobalContext();
   const handleFaqsClick = (href: string) => {
-    if (href === "/faqs") {
+    if (href === "/#faqs") {
       const element = document.getElementById("faqs");
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
@@ -32,7 +32,7 @@ const Header = () => {
       >
         <Image
           src={LogoImage}
-          alt="logo"
+          alt="Fort Sumter Tour Tickets - Charleston, SC"
           className=" h-[30px] w-auto rounded-full fill-white"
         />
       </Link>
@@ -45,7 +45,7 @@ const Header = () => {
               className="relative cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out group"
               onClick={() => handleFaqsClick(link.href)}
             >
-              {link.href === "/faqs" ? (
+              {link.href === "/#faqs" ? (
                 <span>{link.label}</span>
               ) : (
                 <Link href={link.href}>{link.label}</Link>

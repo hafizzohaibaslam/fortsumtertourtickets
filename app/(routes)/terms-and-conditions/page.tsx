@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
     "Read our Terms & Conditions to understand the rules and regulations for using our website and booking services. By using our site, you agree to these terms.",
+  alternates: { canonical: "/terms-and-conditions" },
 };
 
 const TermsAndConditions = () => {

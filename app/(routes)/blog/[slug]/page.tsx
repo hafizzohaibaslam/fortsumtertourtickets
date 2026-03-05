@@ -4,6 +4,7 @@ import { getImgUrl } from "@/lib/getImgUrl";
 import { cn } from "@/lib/utils";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import Image from "next/image";
 import React from "react";
 
 import BlogDetailsMainContent from "@/features/blog-page/components/BlogDetailsMainContent";
@@ -35,9 +36,27 @@ export async function generateMetadata({
       .trim()
       .slice(0, 155) || "Read more from our latest blog posts.";
 
+  const imageUrl = post.featured_media
+    ? `https://fortsumtertourtickets.com/api/og?media=${post.featured_media}`
+    : "https://fortsumtertourtickets.com/opengraph-image.png";
+
   return {
     title: `${title} | Fort Sumter Tours`,
     description: metadescription || excerpt,
+    alternates: { canonical: `/blog/${slug}` },
+    openGraph: {
+      url: `https://fortsumtertourtickets.com/blog/${slug}`,
+      title: `${title} | Fort Sumter Tours`,
+      description: metadescription || excerpt,
+      type: "article",
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | Fort Sumter Tours`,
+      description: metadescription || excerpt,
+      images: [imageUrl],
+    },
   };
 }
 
@@ -64,18 +83,53 @@ const BlogDetailsPage = async ({
     ? getImgUrl(post.featured_media)
     : "/details-page/image-1.png";
 
+  const postTitle = post.title.rendered.replace(/(<([^>]+)>)/gi, "");
+  const postExcerpt =
+    post.excerpt?.rendered?.replace(/(<([^>]+)>)/gi, "").trim().slice(0, 200) ||
+    "";
+
+  const blogPostSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: postTitle,
+    description: postExcerpt,
+    image: imageURL,
+    datePublished: post.date,
+    dateModified: post.date,
+    url: `https://fortsumtertourtickets.com/blog/${slug}`,
+    author: {
+      "@type": "Organization",
+      name: "Fort Sumter Tour Tickets",
+      url: "https://fortsumtertourtickets.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Fort Sumter Tour Tickets",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://fortsumtertourtickets.com/fortsumter-logo.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://fortsumtertourtickets.com/blog/${slug}`,
+    },
+  };
+
   return (
     <div className="my-[30px] space-y-[30px]">
       {/* Header */}
-      <div
-        style={{
-          backgroundImage: `url(${imageURL})`,
-        }}
-        className={cn(
-          "h-[400px] md:h-[740px] [background-blend-mode:darken] hover:bg-black/30 transition-all duration-300 bg-cover bg-center rounded-[23px]"
-        )}
-      >
-        <div className="bg-[var(--blue-2)] rounded-[23px] flex flex-col justify-center px-[24px] lg:px-[65px] py-[30px] lg:py-[46px]">
+      <div className="relative h-[400px] md:h-[740px] rounded-[23px] overflow-hidden">
+        <Image
+          src={imageURL}
+          alt={postTitle || "Fort Sumter blog article"}
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="relative bg-[var(--blue-2)] rounded-[23px] flex flex-col justify-center px-[24px] lg:px-[65px] py-[30px] lg:py-[46px]">
           <div className="md:max-w-[70%] lg:max-w-[50%]">
             <h1 className="font-nohemi font-normal text-[24px] md:text-[42px] leading-[30px] md:leading-[53px] text-white">
               {post.title.rendered}
@@ -99,6 +153,11 @@ const BlogDetailsPage = async ({
           ))}
         </div>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
+      />
     </div>
   );
 };

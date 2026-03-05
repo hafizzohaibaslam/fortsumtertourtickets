@@ -51,7 +51,7 @@ const Sidebar = () => {
         >
           <Image
             src={LogoImage}
-            alt="logo"
+            alt="Fort Sumter Tour Tickets"
             width={100}
             height={100}
             className="rounded-full fill-white w-full h-full"
