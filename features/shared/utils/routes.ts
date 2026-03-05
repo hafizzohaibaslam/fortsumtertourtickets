@@ -2,6 +2,8 @@ export const ROUTES = {
   HOME: "/",
   PATRIOTS_POINT: "/patriots-point",
   LIBERTY_SQUARE: "/liberty-square",
+  VISIT_FORT_SUMTER: "/visit-fort-sumter",
+  FORT_SUMTER_FERRY: "/fort-sumter-ferry",
   FORT_SUMTER_HISTORY: "/blog",
   FAQs: "/#faqs",
   CONTACT_US: "/contact-us",

@@ -1,41 +1,48 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/features/shared/components/Button";
-import DetailsList from "@/features/shared/components/DetailsList";
 import { useGlobalContext } from "@/features/shared/utils/GlobalProvider";
 import { TOUR_DETAILS } from "@/lib/constants";
-import { MoveUpRight, Hourglass, Clock, Check } from "lucide-react";
+import { MoveUpRight, Hourglass, Clock } from "lucide-react";
 import React from "react";
 
 const TourDetails = () => {
   const { handleBookingModalOpenClose } = useGlobalContext();
   const details = TOUR_DETAILS.dayTour;
   return (
-    <div className="bg-white rounded-[23px] md:px-[43px] px-[12px]  py-[41px] grid grid-cols-1 gap-[32px] xl:grid-cols-[2.5fr_1fr] xl:justify-between mb-[50px]">
+    <div className="bg-white rounded-[23px] md:px-[43px] px-[12px] py-[41px] grid grid-cols-1 gap-[32px] xl:grid-cols-[2.5fr_1fr] xl:justify-between mb-[50px]">
       <div className="space-y-[24px]">
         <div className="space-y-[24px]">
           <h1 className="font-nohemi font-semibold text-[24px] leading-[32px] lg:text-[32px] lg:leading-[32px] text-[#23262F]">
             Fort Sumter Tours: Departure from Patriots Point
           </h1>
           <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
-            Book your Fort Sumter Tours from Patriots Point and enjoy a ferry
-            ride across Charleston Harbor to the historic fort. Yeah, that’s the
-            same fort where the Civil War began. Our guided Fort Sumter tours
-            include complete boat service, museum access, and ranger programs.
-            It’s the super-easy and most convenient way to experience this
-            national monument. Just book your tickets online today.
+            Book your Fort Sumter tour from Patriots Point in Mount Pleasant and
+            experience a narrated{" "}
+            <Link
+              href="/fort-sumter-ferry"
+              className="text-[#3772FF] underline"
+            >
+              ferry ride
+            </Link>{" "}
+            across Charleston Harbor to the historic fort where the first shots
+            of the American Civil War were fired on April 12, 1861. Each tour
+            includes round-trip boat service, admission to the fort, access to
+            the on-site museum and exhibits, and a ranger-led history
+            presentation by the National Park Service. Book your tickets online
+            today to secure your preferred departure time.
           </p>
         </div>
         <div className="space-y-[24px]">
-          <h1 className="font-nohemi font-semibold text-[24px] leading-[32px] lg:text-[32px] lg:leading-[32px] text-[#23262F]">
-            What’s Included in a Fort Sumter Tour from Patriots Point
-          </h1>
+          <h2 className="font-nohemi font-semibold text-[24px] leading-[32px] lg:text-[32px] lg:leading-[32px] text-[#23262F]">
+            What&apos;s Included in a Fort Sumter Tour from Patriots Point
+          </h2>
           <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
-            A <strong>Fort Sumter tour from Patriots Point</strong> offers more
-            than just a ferry ride; it’s a complete historical and lovely
-            experience. The moment you board the boat, you’ll feel like every
-            part of the journey is designed for you, to let you feel the charm
-            of Charleston’s beauty. Here is what is included:
+            A Fort Sumter tour from Patriots Point is a complete 2-hour-and-15-minute
+            experience that combines scenic harbor cruising with self-guided
+            exploration of one of America&apos;s most significant Civil War
+            landmarks. Every ticket includes:
           </p>
           <div>
             <ul className="list-disc mt-4 ml-10">
@@ -53,42 +60,74 @@ const TourDetails = () => {
         </div>
 
         <div className="space-y-[24px] mt-18">
-          <h1 className="font-nohemi font-semibold text-[24px] leading-[32px] lg:text-[32px] lg:leading-[32px] text-[#23262F]">
-            A Complete Fort Sumter Tour Schedule From Patriots Point
-          </h1>
+          <h2 className="font-nohemi font-semibold text-[24px] leading-[32px] lg:text-[32px] lg:leading-[32px] text-[#23262F]">
+            A Complete Fort Sumter Tour Schedule from Patriots Point
+          </h2>
           <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
-            A tour from Patriots Point takes you to the site where the Civil War
-            started in April 1861. The 30-minute narrated ferry offers views of
-            Charleston Harbor, passing Castle Pinckney, the Battery, and USS
-            Yorktown with commentary on the city’s Civil War history.
-            <br />
-            <br />
-            At Fort Sumter, roam about here and there for about an hour. See the
-            fort’s battle-damaged walls, museum exhibits, original flags, and
-            ranger-led talks that bring history to life. From the top, enjoy
-            lovely harbor views before returning on a relaxing ferry ride. This
-            tour blends history, scenery, and storytelling in one unforgettable
-            experience.
+            The Fort Sumter tour from Patriots Point begins with a 30-minute
+            narrated ferry crossing of Charleston Harbor. Along the way, a
+            National Park Service guide provides commentary on the landmarks you
+            pass — including Castle Pinckney, the Battery, the USS Yorktown, and
+            the Arthur Ravenel Jr. Bridge.
+          </p>
+          <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
+            Upon arrival at Fort Sumter, visitors have approximately one hour to
+            explore the fort at their own pace. Walk through battle-scarred brick
+            walls, view original Civil War cannons and artillery, visit the
+            museum with its collection of artifacts and historical exhibits, and
+            listen to a ranger-led presentation on the events of April 1861.
+            From the ramparts, take in panoramic views of Charleston Harbor
+            before boarding the return ferry for a relaxing ride back to Patriots
+            Point.
+          </p>
+        </div>
+
+        {/* Parking and Directions */}
+        <div className="space-y-[24px] mt-18">
+          <h2 className="font-nohemi font-semibold text-[24px] leading-[32px] lg:text-[32px] lg:leading-[32px] text-[#23262F]">
+            Parking and Directions to Patriots Point
+          </h2>
+          <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
+            Patriots Point is located at <strong>40 Patriots Point Road,
+            Mount Pleasant, SC 29464</strong>. On-site parking is available in a
+            large lot adjacent to the ferry terminal. Patriots Point offers
+            easier parking than downtown Charleston and can accommodate RVs and
+            larger vehicles.
+          </p>
+          <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
+            <strong>From downtown Charleston:</strong> Cross the Arthur Ravenel
+            Jr. Bridge via US-17 North. Take the Mount Pleasant exit and follow
+            signs to Patriots Point Road. The ferry terminal is located past the
+            roundabout near the USS Yorktown.
+          </p>
+          <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
+            Prefer departing from downtown? See our{" "}
+            <Link
+              href="/liberty-square"
+              className="text-[#3772FF] underline"
+            >
+              Liberty Square departure
+            </Link>{" "}
+            page. For a complete overview of both departure options, visit our{" "}
+            <Link
+              href="/visit-fort-sumter"
+              className="text-[#3772FF] underline"
+            >
+              visitor guide
+            </Link>
+            .
           </p>
         </div>
       </div>
 
       <div className="md:p-[32px] p-[12px] border-[1px] border-[#E6E8EC] bg-[#FCFCFD] rounded-[24px] space-y-[32px] xl:self-start">
-        <h1 className="font-dm-sans font-bold text-[32px] leading-[40px] text-[#141416]">
+        <h2 className="font-dm-sans font-bold text-[32px] leading-[40px] text-[#141416]">
           Fort Sumter Tours
-        </h1>
+        </h2>
         <span className="font-plus-jakarta-sans font-medium text-[14px] text-[#252B2E]">
           (Departure from Patriots Point)
         </span>
 
-        {/* <DetailsList
-          listOptions={whatIsIncluded.map((item) => ({
-            Icon: Check,
-            label: item.heading,
-            iconClassName: "bg-[#34C759]",
-          }))}
-          className="gap-[17px]"
-        /> */}
         <div className="rounded-[16px] bg-[#F4F5F6] p-[12px] flex items-center gap-[10px] w-fit">
           <div className="flex items-center gap-[5px]">
             <Hourglass size={25} />
@@ -123,46 +162,42 @@ export default TourDetails;
 const whatIsIncluded = [
   {
     heading: "Round-trip ferry ride from Patriots Point",
-    description: "is included with every ticket",
+    description:
+      "— a 30-minute narrated cruise across Charleston Harbor, included with every ticket.",
   },
   {
-    heading: "Entrance to Fort Sumter",
-    description: "and access to on-site exhibits",
+    heading: "Admission to Fort Sumter National Monument",
+    description: "and access to all on-site exhibits and displays.",
   },
   {
-    heading: "One hour to explore",
-    description: "the fort on your own",
+    heading: "Approximately one hour of self-guided exploration",
+    description:
+      "— walk the fort's grounds, ramparts, and museum at your own pace.",
   },
   {
-    heading: "Ranger-led history talk",
-    description: "explaining Fort Sumter’s role in the Civil War",
+    heading: "Ranger-led history presentation",
+    description:
+      "by the National Park Service, covering Fort Sumter's role in the outbreak of the Civil War.",
   },
   {
-    heading: "Chance to view original cannons and museum displays",
-    description: "",
+    heading: "Original Civil War cannons and museum artifacts",
+    description:
+      "— including weapons, uniforms, historical photographs, and flag displays.",
   },
   {
-    heading: "Ferry ride across Charleston Harbor with views of:",
+    heading: "Scenic harbor views throughout the cruise:",
     description: `
       <ul>
         <li>Arthur Ravenel Jr. Bridge</li>
         <li>Castle Pinckney</li>
-        <li>Charleston skyline</li>
+        <li>Charleston skyline and the Battery</li>
+        <li>USS Yorktown (from Patriots Point)</li>
       </ul>
     `,
   },
   {
-    heading: "A perfect mix of education, history, and sightseeing",
-    description: "",
-  },
-  {
-    heading:
-      "Tours provide easy transport, guided history, and self-exploration, too.",
-    description: "",
-  },
-  {
-    heading:
-      "Visitors leave with beautiful memories and a way more deeper understanding of American history",
-    description: "",
+    heading: "A complete experience combining education, history, and sightseeing",
+    description:
+      "— from the narrated ferry ride to self-guided exploration of one of America's most important Civil War sites.",
   },
 ];

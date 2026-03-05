@@ -131,6 +131,16 @@ const Home = () => {
         name: "Fort Sumter Tours - Liberty Square",
         url: "https://fortsumtertourtickets.com/liberty-square",
       },
+      {
+        "@type": "SiteNavigationElement",
+        name: "Plan Your Visit to Fort Sumter",
+        url: "https://fortsumtertourtickets.com/visit-fort-sumter",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        name: "Fort Sumter Ferry",
+        url: "https://fortsumtertourtickets.com/fort-sumter-ferry",
+      },
     ],
   };
 

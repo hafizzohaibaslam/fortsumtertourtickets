@@ -1,42 +1,51 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/features/shared/components/Button";
-import DetailsList from "@/features/shared/components/DetailsList";
 import { useGlobalContext } from "@/features/shared/utils/GlobalProvider";
 import { TOUR_DETAILS } from "@/lib/constants";
-import { MoveUpRight, Hourglass, Clock, Check } from "lucide-react";
+import { MoveUpRight, Hourglass, Clock } from "lucide-react";
 import React from "react";
 
 const TourDetails = () => {
   const { handleBookingModalOpenClose } = useGlobalContext();
   const details = TOUR_DETAILS.nightTour;
   return (
-    <div className="bg-white rounded-[23px] md:px-[43px] px-[12px]  py-[41px] grid grid-cols-1 gap-[32px] xl:grid-cols-[2.5fr_1fr] xl:justify-between mb-[50px]">
+    <div className="bg-white rounded-[23px] md:px-[43px] px-[12px] py-[41px] grid grid-cols-1 gap-[32px] xl:grid-cols-[2.5fr_1fr] xl:justify-between mb-[50px]">
       <div className="space-y-[24px]">
         <div className="space-y-[24px]">
           <h1 className="font-nohemi font-semibold text-[24px] leading-[32px] lg:text-[32px] lg:leading-[32px] text-[#23262F]">
             Fort Sumter Tours: Departure from Liberty Square
           </h1>
           <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
-            Book your <strong>Fort Sumter Tours from Liberty Square,</strong>{" "}
-            the one smack in downtown Charleston by the water. Enjoy a ferry
-            ride to the historic fort where the Civil War began, with engaging
-            ranger talks and museum access included. Our{" "}
-            <strong> Fort Sumter tours </strong> provide historical information.
-            And views (killer!). Book your tickets online today.
+            Book your Fort Sumter tour from Liberty Square in downtown
+            Charleston and experience a narrated{" "}
+            <Link
+              href="/fort-sumter-ferry"
+              className="text-[#3772FF] underline"
+            >
+              ferry ride
+            </Link>{" "}
+            across Charleston Harbor to the historic fort where the American
+            Civil War began on April 12, 1861. Every tour includes round-trip
+            boat service, admission to the fort, museum and exhibit access, and
+            a ranger-led history presentation by the National Park Service.
+            Liberty Square is the primary departure point, located in the heart
+            of Charleston&apos;s Historic District. Book your tickets online
+            today.
           </p>
         </div>
         <div className="space-y-[24px]">
-          <h1 className="font-nohemi font-semibold text-[24px] leading-[32px] lg:text-[32px] lg:leading-[32px] text-[#23262F]">
-            What’s Included in a Fort Sumter Tour from Liberty Square
-          </h1>
+          <h2 className="font-nohemi font-semibold text-[24px] leading-[32px] lg:text-[32px] lg:leading-[32px] text-[#23262F]">
+            What&apos;s Included in a Fort Sumter Tour from Liberty Square
+          </h2>
           <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
-            If you’re staying in downtown Charleston, the Fort Sumter tour from
-            Liberty Square is really easy. It leaves right by the South Carolina
-            Aquarium, so super easy to get to. You’ll cruise across Charleston
-            Harbor with awesome views, hear some cool history along the way, and
-            then have plenty of time to wander the fort on your own. Here is
-            what is included:
+            The Fort Sumter tour from Liberty Square is a complete
+            2-hour-and-15-minute experience departing from downtown Charleston.
+            Located adjacent to the South Carolina Aquarium at 340 Concord
+            Street, Liberty Square provides convenient access for visitors
+            staying in Charleston&apos;s Historic District. Every ticket
+            includes:
           </p>
           <div>
             <ul className="list-disc mt-4 ml-10">
@@ -54,45 +63,77 @@ const TourDetails = () => {
         </div>
 
         <div className="space-y-[24px] mt-18">
-          <h1 className="font-nohemi font-semibold text-[24px] leading-[32px] lg:text-[32px] lg:leading-[32px] text-[#23262F]">
-            A Complete Fort Sumter Tour Schedule From Liberty Square
-          </h1>
+          <h2 className="font-nohemi font-semibold text-[24px] leading-[32px] lg:text-[32px] lg:leading-[32px] text-[#23262F]">
+            A Complete Fort Sumter Tour Schedule from Liberty Square
+          </h2>
           <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
-            Fort Sumter tours from Liberty Square in Charleston, South Carolina,
-            at the Visitor Center, open daily 9:00 am to 4:30 pm. Exhibits cover
-            slavery, secession, and the Civil War, with top things like the
-            original 1861 garrison flag.
-            <br />
-            <br />
-            The trip includes a 30-minute narrated Fort Sumter ferry ride across
-            Charleston Harbor with views of the skyline, USS Yorktown, and
-            Ravenel Bridge. At the fort, rangers give an overview before guests
-            explore the grounds, museum, and a 360-degree video on its Civil War
-            role.
-            <br />
-            <br />
-            The return ferry completes this 2.5-hour Fort Sumter tour from
-            Liberty Square. It combines history, beautiful views, and a relaxing
-            trip back to the city.
+            Before boarding the ferry, visitors can explore the Fort Sumter
+            Visitor Education Center at Liberty Square, open daily from 9:00 AM
+            to 4:30 PM. The center features free exhibits covering the events
+            leading to the Civil War — including displays on secession, slavery,
+            and the original 1861 garrison flag.
+          </p>
+          <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
+            The 30-minute narrated ferry crosses Charleston Harbor with
+            panoramic views of the city skyline, the Arthur Ravenel Jr. Bridge,
+            Castle Pinckney, and the Battery. Upon arrival at Fort Sumter,
+            a National Park Service ranger provides an orientation and historical
+            overview. Visitors then have approximately one hour to explore the
+            fort independently — walking through battle-damaged walls, viewing
+            original cannons and museum exhibits, watching a 360-degree video on
+            the fort&apos;s Civil War role, and taking in harbor views from the
+            ramparts. The return ferry completes this 2.5-hour experience with
+            additional sightseeing along the waterfront.
+          </p>
+        </div>
+
+        {/* Parking and Directions */}
+        <div className="space-y-[24px] mt-18">
+          <h2 className="font-nohemi font-semibold text-[24px] leading-[32px] lg:text-[32px] lg:leading-[32px] text-[#23262F]">
+            Parking and Directions to Liberty Square
+          </h2>
+          <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
+            Liberty Square is located at <strong>340 Concord Street,
+            Charleston, SC 29401</strong>, in downtown Charleston adjacent to the
+            South Carolina Aquarium. The ferry terminal is within walking
+            distance of the Historic District, Waterfront Park, and the
+            Charleston City Market.
+          </p>
+          <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
+            <strong>Parking:</strong> The City of Charleston parking garage at{" "}
+            <strong>24 Calhoun Street</strong> is the closest option (paid
+            parking, 7-foot height restriction). Metered street parking is also
+            available in the surrounding area. Public transit via CARTA bus
+            routes serves the Liberty Square area.
+          </p>
+          <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] text-[#777E90] lg:max-w-[90%]">
+            Prefer departing from Mount Pleasant? See our{" "}
+            <Link
+              href="/patriots-point"
+              className="text-[#3772FF] underline"
+            >
+              Patriots Point departure
+            </Link>{" "}
+            page. For a complete comparison of both departure points, visit our{" "}
+            <Link
+              href="/visit-fort-sumter"
+              className="text-[#3772FF] underline"
+            >
+              visitor guide
+            </Link>
+            .
           </p>
         </div>
       </div>
+
       <div className="md:p-[32px] p-[12px] border-[1px] border-[#E6E8EC] bg-[#FCFCFD] rounded-[24px] space-y-[32px] xl:self-start">
-        <h1 className="font-dm-sans font-bold text-[32px] leading-[40px] text-[#141416]">
+        <h2 className="font-dm-sans font-bold text-[32px] leading-[40px] text-[#141416]">
           Fort Sumter Tours
-        </h1>
+        </h2>
         <span className="font-plus-jakarta-sans font-medium text-[14px] text-[#252B2E]">
           (Departure from Liberty Square)
         </span>
 
-        {/* <DetailsList
-          listOptions={whatIsIncluded.map((item) => ({
-            Icon: Check,
-            label: item.heading,
-            iconClassName: "bg-[#34C759]",
-          }))}
-          className="gap-[17px]"
-        /> */}
         <div className="rounded-[16px] bg-[#F4F5F6] p-[12px] flex items-center gap-[10px] w-fit">
           <div className="flex items-center gap-[5px]">
             <Hourglass size={25} />
@@ -127,47 +168,43 @@ export default TourDetails;
 const whatIsIncluded = [
   {
     heading: "Round-trip ferry ride from Liberty Square",
-    description: "is included with every ticket",
+    description:
+      "— a 30-minute narrated cruise from downtown Charleston, included with every ticket.",
   },
   {
-    heading: "Direct access to Fort Sumter",
-    description: "and its on-site exhibits",
+    heading: "Direct access to Fort Sumter National Monument",
+    description: "and all on-site exhibits and displays.",
   },
   {
-    heading: "About one hour to explore",
-    description: "the fort independently",
+    heading: "Approximately one hour of self-guided exploration",
+    description:
+      "— walk the fort's grounds, ramparts, and museum independently.",
   },
   {
-    heading: "Ranger-led history program",
-    description: "covering Fort Sumter’s Civil War significance",
+    heading: "Ranger-led history presentation",
+    description:
+      "by the National Park Service, covering the bombardment of Fort Sumter and the outbreak of the Civil War.",
   },
   {
-    heading: "Opportunity to see original cannons and museum displays",
-    description: "",
+    heading: "Original Civil War cannons and museum artifacts",
+    description:
+      "— including historical photographs, weapons, uniforms, and flag displays.",
   },
   {
-    heading: "Ferry ride across Charleston Harbor with views of:",
+    heading: "Scenic harbor views throughout the cruise:",
     description: `
       <ul>
-        <li>Charleston’s historic waterfront and Battery</li>
+        <li>Charleston's historic waterfront and the Battery</li>
         <li>Arthur Ravenel Jr. Bridge</li>
         <li>Castle Pinckney</li>
-        <li>The city skyline from the harbor</li>
+        <li>The Charleston skyline from the harbor</li>
       </ul>
     `,
   },
   {
-    heading: "A blend of education, sightseeing, and history",
-    description: "",
-  },
-  {
-    heading: "Fort Sumter tours from Liberty Square",
+    heading:
+      "Access to the Fort Sumter Visitor Education Center at Liberty Square",
     description:
-      "provide convenient downtown departure, guided insight, and time for self-exploration",
-  },
-  {
-    heading: "Visitors leave with",
-    description:
-      "unforgettable views and a deeper understanding of American history",
+      "— free exhibits on secession, slavery, and the events leading to the Civil War, available before your ferry departure.",
   },
 ];

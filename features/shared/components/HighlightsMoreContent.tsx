@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import React from "react";
 
 type HighlightsMoreContentProps = {
@@ -17,278 +18,353 @@ const HighlightsMoreContent = ({ showAll }: HighlightsMoreContentProps) => {
       aria-hidden={!showAll}
     >
       <div className="rounded-[23px]">
-        {/* Content Sections */}
         <div className="flex flex-col gap-[30px]">
           {/* Section 1 */}
-          <section className="animate-in slide-in-from-left-4 duration-700 delay-200">
+          <section>
             <h2 className="font-nohemi font-medium text-[#25283E] text-[24px] leading-[32px] lg:text-[28px] lg:leading-[40px] mb-[10px]">
               Fort Sumter Tours Overview
             </h2>
             <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-              Fort Sumter tours are about 2 hours and include the ferry service,
-              history talks from rangers, and ample time to view the fort on
-              your own.
+              Fort Sumter tours are approximately 2 hours and 15 minutes in
+              duration, combining a narrated ferry cruise with self-guided
+              exploration of the fort. Each tour includes round-trip ferry
+              service, admission to Fort Sumter National Monument, a ranger-led
+              history presentation, and time to explore the museum and grounds
+              independently.
             </p>
             <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E] my-[10px]">
-              Here’s what you can expect on a standard Fort Sumter tour:
+              Here is what you can expect on a standard Fort Sumter tour:
             </p>
             <ul className="my-[10px] space-y-[4px] pl-[20px] list-disc">
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                <strong>Complete 2-way ferry rides</strong> from Charleston or
-                Mount Pleasant.
+                <strong>Round-trip ferry ride</strong> from{" "}
+                <Link href="/liberty-square" className="text-[#3772FF] underline">
+                  Liberty Square
+                </Link>{" "}
+                in downtown Charleston or{" "}
+                <Link href="/patriots-point" className="text-[#3772FF] underline">
+                  Patriots Point
+                </Link>{" "}
+                in Mount Pleasant.
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                <strong>Amazing harbor views,</strong> like the Ravenel Bridge &
-                Charleston skyline.
+                <strong>Scenic Charleston Harbor views,</strong> including the
+                Arthur Ravenel Jr. Bridge, the Battery, Castle Pinckney, and the
+                city skyline.
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                <strong>Guided history presentation</strong> by National Park
-                Service rangers.
+                <strong>Ranger-led history presentation</strong> by the National
+                Park Service on the events of April 1861.
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                <strong>Self-exploration</strong> of the fort’s grounds,
-                exhibits, and museum.
+                <strong>Self-guided exploration</strong> of the fort&apos;s
+                grounds, museum exhibits, original cannons, and flag displays.
               </li>
             </ul>
             <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E] my-[10px]">
-              This island, Fort Sumter, and these tours remain one of the top
-              things to do in Charleston, South Carolina.
+              Fort Sumter remains one of the most visited historic sites in
+              Charleston, South Carolina, and a must-see destination for anyone
+              interested in American history.
             </p>
             <div className="w-full h-[1px] bg-[#E5E7EB] mt-[25px]"></div>
           </section>
 
           {/* Section 2 */}
-          <section className="animate-in slide-in-from-left-4 duration-700 delay-300">
+          <section>
             <h2 className="font-nohemi font-medium text-[#25283E] text-[24px] leading-[32px] lg:text-[28px] lg:leading-[40px] mb-[10px]">
-              Fort Sumter Tours Charleston, SC: What Makes Them Special?
+              What Makes Fort Sumter Tours Special
             </h2>
             <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-              Here’s what makes Charleston, South Carolina, Fort Sumter tours
-              special:
+              Fort Sumter tours offer a unique combination of historical
+              significance, natural beauty, and expert interpretation that
+              cannot be replicated elsewhere:
             </p>
             <ul className="my-[10px] space-y-[4px] pl-[20px] list-disc">
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                <strong>Historic Importance:</strong> Fort Sumter is where the
-                Civil War started. Visiting the place gives you a chance to look
-                into war things.
+                <strong>Historic Significance:</strong> Fort Sumter is the site
+                where Confederate forces fired the first shots of the American
+                Civil War on April 12, 1861. Walking the fort&apos;s grounds
+                provides a direct connection to one of the defining moments in
+                American history.
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                <strong>Harbor Setting:</strong> The ferry ride to the fort
-                comes with wonderful views of Charleston Harbor, the Arthur
-                Ravenel Jr. Bridge, and the city’s waterfront
+                <strong>Harbor Setting:</strong> The{" "}
+                <Link href="/fort-sumter-ferry" className="text-[#3772FF] underline">
+                  ferry ride
+                </Link>{" "}
+                across Charleston Harbor offers panoramic views of the Arthur
+                Ravenel Jr. Bridge, the Charleston waterfront, and opportunities
+                to spot bottlenose dolphins and coastal birds.
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                <strong>Expert Guidance:</strong> Rangers there share complete
-                stories and historical points, which add more “wow” to your
-                visit.
+                <strong>Expert Interpretation:</strong> National Park Service
+                rangers provide detailed presentations and are available to
+                answer questions about the fort&apos;s construction, the 1861
+                bombardment, and its role throughout the Civil War.
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                <strong>Easy Departure Points:</strong> Ferries depart from
-                Liberty Square in downtown Charleston and Patriots Point in
-                Mount Pleasant. and Patriots Point in Mount Pleasant.
+                <strong>Two Convenient Departure Points:</strong> Ferries depart
+                from{" "}
+                <Link href="/liberty-square" className="text-[#3772FF] underline">
+                  Liberty Square in downtown Charleston
+                </Link>{" "}
+                and{" "}
+                <Link href="/patriots-point" className="text-[#3772FF] underline">
+                  Patriots Point in Mount Pleasant
+                </Link>
+                , accommodating visitors from both sides of the Cooper River.
               </li>
             </ul>
             <div className="w-full h-[1px] bg-[#E5E7EB] mt-[25px]"></div>
           </section>
 
           {/* Section 3 */}
-          <section className="animate-in slide-in-from-left-4 duration-700 delay-400">
+          <section>
             <h2 className="font-nohemi font-medium text-[#25283E] text-[24px] leading-[32px] lg:text-[28px] lg:leading-[40px] mb-[10px]">
-              Getting There - Fort Sumter Ferry Tours
+              Getting to Fort Sumter — Ferry Access Only
             </h2>
             <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-              The only way to reach Fort Sumter is by water, and most tourists
-              travel through the Fort Sumter ferry. The ferry service is made to
-              make your trip a good one, informative, and enjoyable from start
-              to finish.
+              Fort Sumter is located on a man-made island at the entrance to
+              Charleston Harbor and is accessible only by water. Private vessels
+              cannot dock at the fort. The authorized{" "}
+              <Link href="/fort-sumter-ferry" className="text-[#3772FF] underline">
+                Fort Sumter ferry service
+              </Link>{" "}
+              provides narrated round-trip transportation from both departure
+              points and is included with every tour ticket.
             </p>
             <div className="w-full h-[1px] bg-[#E5E7EB] mt-[25px]"></div>
           </section>
 
           {/* Section 4 */}
-          <section className="animate-in slide-in-from-left-4 duration-700 delay-500">
+          <section>
             <h2 className="font-nohemi font-medium text-[#25283E] text-[24px] leading-[32px] lg:text-[28px] lg:leading-[40px] mb-[10px]">
-              Fort Sumter Ferry Departure Points:
+              Fort Sumter Ferry Departure Points
             </h2>
             <ul className="my-[10px] space-y-[4px] pl-[20px] list-disc">
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                <strong>Liberty Square, Downtown Charleston:</strong> Best for
-                visitors who love historic things.
+                <strong>
+                  <Link href="/liberty-square" className="text-[#3772FF] underline">
+                    Liberty Square, Downtown Charleston
+                  </Link>
+                  :
+                </strong>{" "}
+                340 Concord Street, Charleston, SC 29401. Departures at 9:30 AM,
+                12:00 PM, and 2:45 PM (peak season). Adjacent to the South
+                Carolina Aquarium and the Fort Sumter Visitor Education Center.
+                Parking available at the City of Charleston garage on 24 Calhoun
+                Street.
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                <strong>Patriots Point, Mount Pleasant:</strong> Perfect for
-                those who want the USS Yorktown and other attractions.
+                <strong>
+                  <Link href="/patriots-point" className="text-[#3772FF] underline">
+                    Patriots Point, Mount Pleasant
+                  </Link>
+                  :
+                </strong>{" "}
+                40 Patriots Point Road, Mount Pleasant, SC 29464. Departures at
+                10:45 AM and 1:30 PM (peak season). On-site parking available.
+                Adjacent to the USS Yorktown and Patriots Point Naval &amp;
+                Maritime Museum.
               </li>
             </ul>
             <div className="w-full h-[1px] bg-[#E5E7EB] mt-[25px]"></div>
           </section>
 
           {/* Section 5 */}
-          <section className="animate-in slide-in-from-left-4 duration-700 delay-500">
+          <section>
             <h2 className="font-nohemi font-medium text-[#25283E] text-[24px] leading-[32px] lg:text-[28px] lg:leading-[40px] mb-[10px]">
               What to Expect on the Ferry to Fort Sumter
             </h2>
             <ul className="my-[10px] space-y-[4px] pl-[20px] list-disc">
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                30-minute boat ride across Charleston Harbor (views! Just wow!)
+                A 30-minute narrated boat ride across Charleston Harbor with
+                panoramic views
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                Indoor and outdoor seating for comfort
+                Indoor and outdoor seating for comfort in all weather conditions
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                Live narration about landmarks and Civil War history
+                Live narration about Charleston&apos;s landmarks and Civil War
+                history by a National Park Service guide
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                Clear views of the Charleston skyline
+                Views of the Charleston skyline, the Battery, and Rainbow Row
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                See the Ravenel Bridge and Morris Island Lighthouse
+                The Arthur Ravenel Jr. Bridge and Morris Island Lighthouse
+              </li>
+              <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
+                Common sightings of bottlenose dolphins and coastal birds
               </li>
             </ul>
             <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E] my-[10px]">
-              Booking Ft Sumter ferry tickets early helps you get the time you
-              want, like on weekends and busy seasons. The ferry ride is part of
-              the trip, with comfortable seating and beautiful views before you
-              reach the fort.
+              Booking Fort Sumter ferry tickets in advance ensures you secure
+              your preferred departure time, particularly during weekends, holidays,
+              and the busy spring and summer seasons. For complete ferry
+              information, visit our{" "}
+              <Link href="/fort-sumter-ferry" className="text-[#3772FF] underline">
+                Fort Sumter ferry guide
+              </Link>
+              .
             </p>
             <div className="w-full h-[1px] bg-[#E5E7EB] mt-[25px]"></div>
           </section>
 
           {/* Section 6 */}
-          <section className="animate-in slide-in-from-left-4 duration-700 delay-400">
+          <section>
             <h2 className="font-nohemi font-medium text-[#25283E] text-[24px] leading-[32px] lg:text-[28px] lg:leading-[40px] mb-[10px]">
-              Tickets for Fort Sumter
+              Fort Sumter Tour Tickets
             </h2>
             <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-              To visit the fort, you must purchase Fort Sumter tour tickets,
-              your pass to get in. Tickets sell out very quickly, especially
-              during weekends and peak tourist seasons. Snag yours in advance.
-              Get your ticket in less than a minute. Go from Liberty Square and
-              Patriots Point.
+              Fort Sumter tour tickets include round-trip ferry transportation
+              and admission to the fort. There is no separate entrance fee —
+              the ferry ticket covers everything. Tickets sell out frequently,
+              especially during weekends, holidays, and peak tourist seasons.
+              Online booking takes less than 60 seconds and guarantees your spot.
             </p>
             <div className="w-full h-[1px] bg-[#E5E7EB] mt-[25px]"></div>
           </section>
 
           {/* Section 7 */}
-          <section className="animate-in slide-in-from-left-4 duration-700 delay-500">
+          <section>
             <h2 className="font-nohemi font-medium text-[#25283E] text-[24px] leading-[32px] lg:text-[28px] lg:leading-[40px] mb-[10px]">
-              Fort Sumter Tours Pricing:
+              Fort Sumter Tour Pricing
             </h2>
             <ul className="my-[10px] space-y-[4px] pl-[20px] list-disc">
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                Adult tickets from <strong>$40–$45.</strong>
+                <strong>Adults:</strong> $40.00
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                Lower rates are available for children, seniors, and military
-                members.
+                <strong>Seniors (62+) / Active Military:</strong> $36.00
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                Children under a specific age (like, 3 yr) are free; check
-                current policies before booking.
+                <strong>Children (4&ndash;11):</strong> $26.00
+              </li>
+              <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
+                <strong>Children 3 and under:</strong> Free
               </li>
             </ul>
+            <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E] my-[10px]">
+              National Parks Passes do not apply to the ferry fee. For a
+              complete pricing breakdown and booking information, visit our{" "}
+              <Link href="/visit-fort-sumter" className="text-[#3772FF] underline">
+                visitor guide
+              </Link>
+              .
+            </p>
             <div className="w-full h-[1px] bg-[#E5E7EB] mt-[25px]"></div>
           </section>
 
           {/* Section 8 */}
-          <section className="animate-in slide-in-from-left-4 duration-700 delay-500">
+          <section>
             <h2 className="font-nohemi font-medium text-[#25283E] text-[24px] leading-[32px] lg:text-[28px] lg:leading-[40px] mb-[10px]">
-              Tips for Booking Tickets for Fort Sumter:
+              Tips for Booking Fort Sumter Tickets
             </h2>
             <ul className="my-[10px] space-y-[4px] pl-[20px] list-disc">
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                Grab your Fort Sumter ferry tickets online a few days before
-                your trip.
+                Book your Fort Sumter ferry tickets online at least several days
+                before your planned visit to guarantee availability.
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                Grab your Fort Sumter ferry tickets online a few days before
-                your trip. Show up about 30 minutes early to check in and hop on
-                board.
+                Arrive at the departure point at least 30 minutes before your
+                scheduled ferry time for check-in and boarding.
               </li>
               <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                Around holidays or school breaks, lock in your tickets way ahead
-                so you don’t get stuck last-minute.
+                During holidays and school break periods, book as far in
+                advance as possible — popular departure times sell out quickly.
               </li>
             </ul>
             <div className="w-full h-[1px] bg-[#E5E7EB] mt-[25px]"></div>
           </section>
 
           {/* Section 9 */}
-          <section className="animate-in slide-in-from-left-4 duration-700 delay-500">
+          <section>
             <h2 className="font-nohemi font-medium text-[#25283E] text-[24px] leading-[32px] lg:text-[28px] lg:leading-[40px] mb-[10px]">
               Tips for Making the Most of Your Fort Sumter Tour
             </h2>
             <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-              Getting the right Fort Sumter tickets makes the whole trip smooth,
-              from the chill ferry ride across the harbor to walking around the
-              fort. Planning ahead saves you headaches and helps you enjoy more.
+              Planning ahead ensures a smooth and enjoyable Fort Sumter
+              experience, from the ferry ride across the harbor to exploring the
+              fort itself.
             </p>
 
-            {/* Best Time to Visit */}
             <div className="my-[10px]">
               <p className="font-plus-jakarta-sans font-bold text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
                 Best Time to Visit:
               </p>
               <ul className="my-[10px] space-y-[4px] pl-[40px] list-disc">
                 <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                  Spring and fall = nice weather + fewer crowds.
+                  Spring (March&ndash;May) and fall (September&ndash;November)
+                  offer the most comfortable weather and smaller crowds.
                 </li>
                 <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                  Morning tours = cooler temps + perfect light for photos.
+                  Morning departures provide cooler temperatures and ideal
+                  lighting for photography.
                 </li>
               </ul>
             </div>
 
-            {/* What to Bring */}
             <div className="my-[10px]">
               <p className="font-plus-jakarta-sans font-bold text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
                 What to Bring:
               </p>
               <ul className="my-[10px] space-y-[4px] pl-[40px] list-disc">
                 <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                  Pack water and sunscreen; shade’s pretty limited inside.
+                  Water and sunscreen — shade is limited inside the fort.
                 </li>
                 <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                  Pack water and sunscreen; shade’s pretty limited inside.
+                  Comfortable walking shoes with good grip for uneven surfaces.
                 </li>
                 <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                  Bring a camera or your phone to capture those shots (must).
+                  A camera or smartphone for capturing harbor views and
+                  historic structures.
                 </li>
               </ul>
             </div>
 
-            {/* Arrival and Boarding */}
             <div className="my-[10px]">
               <p className="font-plus-jakarta-sans font-bold text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
                 Arrival and Boarding:
               </p>
               <ul className="my-[10px] space-y-[4px] pl-[40px] list-disc">
                 <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                  Arrive <strong>30 minutes early</strong>.
+                  Arrive at least <strong>30 minutes early</strong> for
+                  check-in and boarding.
                 </li>
                 <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                  Have your Fort Sumter tour tickets ready.
+                  Have your e-ticket and a valid photo ID ready at the boarding
+                  gate.
                 </li>
               </ul>
             </div>
 
-            {/* Accessibility & Family Info */}
             <div className="my-[10px]">
               <p className="font-plus-jakarta-sans font-bold text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                Accessibility & Family Info:
+                Accessibility and Family Information:
               </p>
               <ul className="my-[10px] space-y-[4px] pl-[40px] list-disc">
                 <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                  Ferries work fine with wheelchairs and strollers.
+                  The ferry accommodates wheelchairs and strollers.
                 </li>
                 <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                  The fort has paved spots, but some areas are a little rough.
+                  The main level of the fort has paved pathways, though some
+                  upper areas require stairs.
                 </li>
                 <li className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E]">
-                  Ranger talks are super kid-friendly and fun for families.
+                  Ranger-led presentations are designed to engage visitors of
+                  all ages, making the tour an excellent choice for families.
                 </li>
               </ul>
             </div>
+
+            <p className="font-plus-jakarta-sans font-normal text-[16px] leading-[24px] lg:leading-[28px] text-[#25283E] my-[10px]">
+              For a complete planning resource, visit our{" "}
+              <Link href="/visit-fort-sumter" className="text-[#3772FF] underline">
+                How to Visit Fort Sumter guide
+              </Link>
+              .
+            </p>
           </section>
         </div>
       </div>

@@ -14,6 +14,10 @@ export const navlinks = [
     href: ROUTES.LIBERTY_SQUARE,
   },
   {
+    label: "Plan Your Visit",
+    href: ROUTES.VISIT_FORT_SUMTER,
+  },
+  {
     label: "Fort Sumter History",
     href: ROUTES.FORT_SUMTER_HISTORY,
   },
@@ -36,6 +40,14 @@ export const footerNavlinks = [
   {
     label: "Home",
     href: "/",
+  },
+  {
+    label: "Plan Your Visit",
+    href: ROUTES.VISIT_FORT_SUMTER,
+  },
+  {
+    label: "Fort Sumter Ferry",
+    href: ROUTES.FORT_SUMTER_FERRY,
   },
   {
     label: "Fort Sumter History",
